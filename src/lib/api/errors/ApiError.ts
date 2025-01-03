@@ -1,7 +1,7 @@
 interface ApiError {
-  code: string;
-  message: string;
-  status: number;
+  code?: string;
+  message?: string;
+  status?: number;
 }
 
 export class ApiError extends Error {
@@ -22,5 +22,17 @@ export class ApiError extends Error {
       response.data?.code,
       response.data?.details
     );
+  }
+}
+
+class ApiError {
+  code?: string;
+  message?: string;
+  status?: number;
+
+  constructor(message: string, code?: string, status?: number) {
+    this.message = message;
+    this.code = code;
+    this.status = status;
   }
 }

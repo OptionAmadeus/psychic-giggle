@@ -31,6 +31,7 @@ export function ContactForm() {
           Thank you for reaching out. We'll get back to you within 24 hours.
         </p>
         <p>It&apos;s a great day!</p>
+        <p>It doesn&apos;t work.</p>
       </div>
     );
   }

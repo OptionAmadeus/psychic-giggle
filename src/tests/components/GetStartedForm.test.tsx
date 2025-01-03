@@ -1,6 +1,7 @@
-import { describe, it, expect } from 'vitest';
+import React from 'react';
+import { describe, it, expect, test } from 'vitest';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import { GetStartedForm } from '../../components/marketing/GetStartedForm';
+import GetStartedForm from '../components/marketing/GetStartedForm';
 
 describe('GetStartedForm', () => {
   it('should show validation errors for empty fields', async () => {
@@ -30,6 +31,15 @@ describe('GetStartedForm', () => {
       expect(screen.getByText("You're on the list!")).toBeInTheDocument();
     });
   });
+});
+
+test('renders GetStartedForm component', () => {
+  const { container } = render(
+    <div>
+      <GetStartedForm />
+    </div>
+  );
+  expect(container).toMatchSnapshot();
 });
 
 <p>It&apos;s a great day!</p>

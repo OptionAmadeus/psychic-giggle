@@ -75,3 +75,12 @@ export class CoinbaseService {
 const someFunction = (param: SpecificType) => {
   // ...
 };
+
+function processTransaction(transaction: { id: string; amount: number }) {
+  // ...
+}
+
+// Or if the structure is not known, use `unknown`
+function processTransaction(transaction: unknown) {
+  // ...
+}

@@ -50,6 +50,16 @@ export class CoinbaseService {
   }
 }
 
-const someFunction = (param: SpecificType) => {
+const _param = "value";
+const someFunction = (_param: any) => {
   // ...
 };
+
+function fetchData(data: { id: number; name: string }) {
+  // ...
+}
+
+// Or if the structure is not known, use `unknown`
+function fetchData(data: unknown) {
+  // ...
+}

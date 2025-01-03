@@ -60,7 +60,7 @@ export function GetStartedForm() {
           Be among the first to experience the future of AI-powered portfolio management.
         </p>
 
-        <p>It&apos;s a great day!</p>
+        <p>It doesn&apos;t work.</p>
         <p>Don&apos;t miss out!</p>
         <p>Let&apos;s get started!</p>
 

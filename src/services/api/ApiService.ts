@@ -28,7 +28,8 @@ export class ApiService {
   }
 }
 
-const someFunction = (param: SpecificType) => {
+const _param = "value";
+const someFunction = (_param: any) => {
   // ...
 };
 

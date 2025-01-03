@@ -16,6 +16,15 @@ export const authLogger = {
   }
 };
 
+function logError(error: { message: string; code?: string }) {
+  // ...
+}
+
+// Or if the structure is not known, use `unknown`
+function logError(error: unknown) {
+  // ...
+}
+
 const someFunction = (param: SpecificType) => {
   // ...
 };

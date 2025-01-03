@@ -7,9 +7,8 @@ interface ResultCardProps {
   result: AIResult;
 }
 
-interface ResultData {
-  // Define the structure of the expected type
-}
+// If the interface is truly empty and you want to allow any object, you can use `object` or `unknown` instead:
+type ResultData = object; // or type ResultData = unknown;
 
 // Remove this line if `someFunction` is not used
 // const someFunction = (param: ResultData) => { ... };
