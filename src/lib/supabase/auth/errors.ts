@@ -8,7 +8,7 @@ export class AuthError extends Error {
     this.name = 'AuthError';
   }
 
-  static fromSupabaseError(error: any): AuthError {
+  static fromSupabaseError(error: { code?: string; message?: string; status?: number }): AuthError {
     // Handle connection errors
     if (error.message?.includes('Failed to fetch') || 
         error.message?.includes('network')) {
@@ -46,3 +46,6 @@ export class AuthError extends Error {
     );
   }
 }
+
+// Remove this line if `error` is not used
+// static fromSupabaseError(_error: { code?: string; message?: string; status?: number }): AuthError { ... }

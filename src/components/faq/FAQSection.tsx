@@ -1,5 +1,4 @@
 import React from 'react';
-import { ChevronDown } from 'lucide-react';
 import { FAQItem } from './FAQItem';
 
 const faqs = [

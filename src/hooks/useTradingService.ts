@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { tradingService } from '@/services/trading/TradingService';
 import type { TradeRecommendation, Transaction } from '@/types/portfolio';
 
@@ -6,7 +6,7 @@ export function useTradingService() {
   const [isExecuting, setIsExecuting] = useState(false);
   const [error, setError] = useState<Error | null>(null);
 
-  const executeTrade = async (recommendation: TradeRecommendation): Promise<Transaction | null> => {
+  const executeTrade = useCallback(async (recommendation: TradeRecommendation): Promise<Transaction | null> => {
     setIsExecuting(true);
     setError(null);
 
@@ -19,11 +19,7 @@ export function useTradingService() {
     } finally {
       setIsExecuting(false);
     }
-  };
+  }, []);
 
-  return {
-    executeTrade,
-    isExecuting,
-    error
-  };
+  return { isExecuting, error, executeTrade };
 }

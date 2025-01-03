@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { supabase } from '@/lib/supabase';
 
 describe('send-confirmation-email Edge Function', () => {

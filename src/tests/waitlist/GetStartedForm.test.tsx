@@ -1,5 +1,5 @@
 import { describe, it, expect, vi } from 'vitest';
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { GetStartedForm } from '@/components/marketing/GetStartedForm';
 
@@ -49,3 +49,7 @@ describe('GetStartedForm', () => {
     });
   });
 });
+
+<p>It&apos;s a great day!</p>
+<p>Don&apos;t miss out!</p>
+<p>Let&apos;s get started!</p>

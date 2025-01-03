@@ -1,3 +1,9 @@
+interface ApiError {
+  code: string;
+  message: string;
+  status: number;
+}
+
 export class ApiError extends Error {
   constructor(
     message: string,

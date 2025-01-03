@@ -25,7 +25,7 @@ export async function generateSignature(
 
     // Convert the signature to base64
     return btoa(String.fromCharCode(...new Uint8Array(signature)));
-  } catch (error) {
+  } catch {
     throw new CoinbaseError(
       'Failed to generate signature',
       'SIGNATURE_ERROR'
@@ -48,7 +48,7 @@ async function importKey(secret: string): Promise<CryptoKey> {
       false,
       ['sign']
     );
-  } catch (error) {
+  } catch {
     throw new CoinbaseError(
       'Invalid API secret',
       'INVALID_SECRET'

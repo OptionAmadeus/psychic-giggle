@@ -17,42 +17,21 @@ export function usePriceHistory(
   const [error, setError] = useState<Error | null>(null);
 
   useEffect(() => {
-    let mounted = true;
-
-    async function loadPriceHistory() {
-      if (!productId) return;
-      
+    const fetchData = async () => {
       setIsLoading(true);
       setError(null);
-
       try {
-        const history = await fetchPriceHistory(
-          productId,
-          options.granularity,
-          options.start,
-          options.end
-        );
-
-        if (mounted) {
-          setData(history);
-        }
+        const result = await fetchPriceHistory(productId, options);
+        setData(result);
       } catch (err) {
-        if (mounted) {
-          setError(err instanceof Error ? err : new Error('Failed to fetch price history'));
-        }
+        setError(err as Error);
       } finally {
-        if (mounted) {
-          setIsLoading(false);
-        }
+        setIsLoading(false);
       }
-    }
-
-    loadPriceHistory();
-
-    return () => {
-      mounted = false;
     };
-  }, [productId, options.granularity, options.start?.getTime(), options.end?.getTime()]);
+
+    fetchData();
+  }, [productId, options]);
 
   return { data, isLoading, error };
 }

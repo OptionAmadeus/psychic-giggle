@@ -60,6 +60,10 @@ export function GetStartedForm() {
           Be among the first to experience the future of AI-powered portfolio management.
         </p>
 
+        <p>It&apos;s a great day!</p>
+        <p>Don&apos;t miss out!</p>
+        <p>Let&apos;s get started!</p>
+
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (
             <ErrorMessage message={error} />

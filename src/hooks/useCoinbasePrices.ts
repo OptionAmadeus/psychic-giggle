@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { coinbaseWebSocket } from '@/lib/coinbase/websocket';
 import type { PriceUpdate } from '@/lib/coinbase/types';
 
@@ -13,27 +13,25 @@ export function useCoinbasePrices(productIds: string[]) {
     lastUpdate: null
   });
 
+  const handlePriceUpdate = useCallback((update: PriceUpdate) => {
+    setState(prevState => ({
+      prices: {
+        ...prevState.prices,
+        [update.product_id]: update.price
+      },
+      lastUpdate: new Date()
+    }));
+  }, []);
+
   useEffect(() => {
     // Subscribe to price updates
-    coinbaseWebSocket.subscribe(productIds);
+    coinbaseWebSocket.subscribe(productIds, handlePriceUpdate);
 
-    // Handle price updates
-    const unsubscribe = coinbaseWebSocket.onPriceUpdate((update: PriceUpdate) => {
-      setState(prev => ({
-        prices: {
-          ...prev.prices,
-          [update.productId]: update.price
-        },
-        lastUpdate: update.time
-      }));
-    });
-
-    // Cleanup
     return () => {
-      unsubscribe();
-      coinbaseWebSocket.unsubscribe(productIds);
+      // Unsubscribe from price updates
+      coinbaseWebSocket.unsubscribe(productIds, handlePriceUpdate);
     };
-  }, [productIds.join(',')]); // Only re-run if product IDs change
+  }, [productIds, handlePriceUpdate]);
 
   return state;
 }

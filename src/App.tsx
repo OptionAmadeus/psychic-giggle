@@ -20,19 +20,12 @@ export default function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/get-started" element={<GetStartedPage />} />
+        <Route path="/dashboard" element={<ProtectedRoute component={DashboardPage} />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/blog" element={<BlogPage />} />
-        <Route path="/blog/:slug" element={<BlogPostPage />} />
-        <Route
-          path="/dashboard/*"
-          element={
-            <ProtectedRoute>
-              <DashboardPage />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/blog/:id" element={<BlogPostPage />} />
         <Route path="/auth/callback" element={<AuthCallback />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>

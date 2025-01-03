@@ -1,7 +1,7 @@
 import type { AxiosError, AxiosResponse } from 'axios';
 
 export interface ApiResponse<T = any> {
-  data: T;
+  data: any; // Replace with specific type
   status: number;
   statusText: string;
 }

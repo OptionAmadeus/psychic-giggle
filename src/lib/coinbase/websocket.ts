@@ -1,4 +1,3 @@
-import { CoinbaseError } from './errors';
 import type { PriceUpdate } from './types';
 
 export class CoinbaseWebSocket {
@@ -108,6 +107,10 @@ export class CoinbaseWebSocket {
     this.messageHandlers = [];
   }
 }
+
+const someFunction = (param: SpecificType) => {
+  // ...
+};
 
 // Export singleton instance
 export const coinbaseWebSocket = new CoinbaseWebSocket();

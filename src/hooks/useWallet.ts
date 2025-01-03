@@ -18,8 +18,5 @@ export function useWallet() {
     handleWalletChange();
   }, [handleWalletChange]);
 
-  return {
-    isConnected: !!wallet,
-    address: wallet?.accounts[0]?.address
-  };
+  return { wallet };
 }

@@ -15,13 +15,9 @@ export function usePortfolioData() {
 
   useAutoRefresh({
     onRefresh: refreshPortfolio,
-    interval: API_CONFIG.refreshIntervals.portfolio
+    interval: API_CONFIG.refreshInterval,
+    enabled: true
   });
 
-  useAutoRefresh({
-    onRefresh: getRecommendations,
-    interval: API_CONFIG.refreshIntervals.recommendations
-  });
-
-  return { isLoading, error, refreshAll };
+  return { error, isLoading, refreshAll };
 }

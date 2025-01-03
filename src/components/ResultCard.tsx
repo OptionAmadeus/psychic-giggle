@@ -7,6 +7,14 @@ interface ResultCardProps {
   result: AIResult;
 }
 
+interface ResultData {
+  // Define the structure of the expected type
+}
+
+const someFunction = (param: ResultData) => {
+  // ...
+};
+
 function isSentimentResult(result: any): result is SentimentResult {
   return 'label' in result && 'score' in result;
 }

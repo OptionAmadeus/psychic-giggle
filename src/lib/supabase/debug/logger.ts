@@ -15,3 +15,10 @@ export const authLogger = {
     }
   }
 };
+
+const someFunction = (param: SpecificType) => {
+  // ...
+};
+
+// Remove this line if `someFunction` is not used
+// const someFunction = (param: SpecificType) => { ... };

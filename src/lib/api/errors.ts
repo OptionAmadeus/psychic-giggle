@@ -29,4 +29,8 @@ export class AuthenticationError extends Error {
     super(message);
     this.name = 'AuthenticationError';
   }
+
+  static fromSupabaseError(error: { code?: string; message?: string; status?: number }): AuthError {
+    // ...
+  }
 }

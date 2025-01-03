@@ -30,6 +30,7 @@ export function ContactForm() {
         <p className="text-green-600">
           Thank you for reaching out. We'll get back to you within 24 hours.
         </p>
+        <p>It&apos;s a great day!</p>
       </div>
     );
   }

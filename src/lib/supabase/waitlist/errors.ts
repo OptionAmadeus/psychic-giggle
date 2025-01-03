@@ -8,7 +8,7 @@ export class WaitlistError extends Error {
     this.name = 'WaitlistError';
   }
 
-  static fromSupabaseError(error: any): WaitlistError {
+  static fromSupabaseError(error: { code?: string; message?: string; status?: number }): WaitlistError {
     if (error.code === '23505') {
       return new WaitlistError(
         'This email is already on the waitlist',

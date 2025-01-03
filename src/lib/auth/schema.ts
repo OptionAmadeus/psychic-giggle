@@ -34,6 +34,6 @@ export async function verifyAuthSchema(): Promise<boolean> {
 }
 
 // Initialize schema verification
-verifyAuthSchema().catch(error => {
-  console.error('Auth schema verification failed:', error);
+verifyAuthSchema().catch((error) => {
+  console.error('Initialization of schema verification failed:', error);
 });

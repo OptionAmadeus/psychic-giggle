@@ -7,32 +7,34 @@ interface AutoRefreshConfig {
 }
 
 export function useAutoRefresh({ onRefresh, interval, enabled = true }: AutoRefreshConfig) {
-  const lastRefresh = useRef<Date>(new Date());
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const refresh = useCallback(async () => {
     if (!enabled) return;
     
     try {
       await onRefresh();
-      lastRefresh.current = new Date();
     } catch (error) {
-      console.error('Refresh failed:', error);
+      console.error('Error during refresh:', error);
     }
-  }, [onRefresh, enabled]);
+  }, [enabled, onRefresh]);
 
   useEffect(() => {
     if (!enabled) return;
 
-    refresh();
-    timeoutRef.current = setInterval(refresh, interval);
+    const handleRefresh = async () => {
+      await refresh();
+      timeoutRef.current = setTimeout(handleRefresh, interval);
+    };
+
+    handleRefresh();
 
     return () => {
       if (timeoutRef.current) {
-        clearInterval(timeoutRef.current);
+        clearTimeout(timeoutRef.current);
       }
     };
-  }, [refresh, interval, enabled]);
+  }, [enabled, interval, refresh]);
 
-  return { lastRefresh: lastRefresh.current, refresh };
+  return null;
 }

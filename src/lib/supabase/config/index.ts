@@ -1,4 +1,3 @@
-import { z } from 'zod';
 import { getEnvironmentConfig } from './environment';
 import { validateConfig } from './validation';
 import type { SupabaseConfig } from './types';

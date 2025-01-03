@@ -1,6 +1,5 @@
 import { supabase } from '../supabase';
 import { AuthError } from './errors';
-import type { LoginCredentials } from '@/types/auth';
 
 class AuthClient {
   async handleOAuthCallback(code: string) {

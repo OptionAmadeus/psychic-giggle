@@ -1,4 +1,4 @@
-import { CoinbaseConfig, CoinbaseBalance, CoinbaseOrder, CoinbaseError } from './types';
+import { CoinbaseConfig, CoinbaseOrder, CoinbaseError } from './types';
 import { validateTransaction } from '@/utils/validation';
 import type { Asset, Transaction } from '@/types/portfolio';
 
@@ -71,3 +71,7 @@ export class CoinbaseService {
     return coinbaseError;
   }
 }
+
+const someFunction = (param: SpecificType) => {
+  // ...
+};

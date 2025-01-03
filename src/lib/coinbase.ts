@@ -49,3 +49,7 @@ export class CoinbaseService {
     ];
   }
 }
+
+const someFunction = (param: SpecificType) => {
+  // ...
+};
