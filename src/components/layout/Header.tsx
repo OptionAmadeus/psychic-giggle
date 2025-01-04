@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Logo } from '../ui/Logo';
-import { HeaderProps } from './types';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Logo } from "../ui/Logo";
+import { HeaderProps } from "./types";
 
 export function Header({ showGetStarted = true }: HeaderProps) {
   return (

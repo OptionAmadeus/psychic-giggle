@@ -1,5 +1,5 @@
-import type { TradeRecommendation } from '@/types/portfolio';
-import { mockRecommendations } from '@/lib/mock/recommendations';
+import type { TradeRecommendation } from "@/types/portfolio";
+import { mockRecommendations } from "@/lib/mock/recommendations";
 
 export class RecommendationsService {
   async getRecommendations(): Promise<TradeRecommendation[]> {

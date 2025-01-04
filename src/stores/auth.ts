@@ -1,5 +1,10 @@
-import { create } from 'zustand';
-import type { AuthState, LoginCredentials, RegistrationData, User } from '../types/auth';
+import { create } from "zustand";
+import type {
+  AuthState,
+  LoginCredentials,
+  RegistrationData,
+  User,
+} from "../types/auth";
 
 interface AuthStore extends AuthState {
   login: (credentials: LoginCredentials) => Promise<void>;
@@ -18,12 +23,12 @@ export const useAuthStore = create<AuthStore>((set) => ({
     set({ isLoading: true, error: null });
     try {
       // TODO: Replace with actual API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       const mockUser = {
-        id: '1',
+        id: "1",
         email: credentials.email,
-        name: 'Demo User',
-        createdAt: new Date()
+        name: "Demo User",
+        createdAt: new Date(),
       };
       set({ user: mockUser, isAuthenticated: true });
     } catch (error) {
@@ -38,12 +43,12 @@ export const useAuthStore = create<AuthStore>((set) => ({
     set({ isLoading: true, error: null });
     try {
       // TODO: Replace with actual API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       const mockUser = {
-        id: '1',
+        id: "1",
         email: data.email,
         name: data.name,
-        createdAt: new Date()
+        createdAt: new Date(),
       };
       set({ user: mockUser, isAuthenticated: true });
     } catch (error) {
@@ -60,5 +65,5 @@ export const useAuthStore = create<AuthStore>((set) => ({
 
   setUser: (user) => {
     set({ user, isAuthenticated: true });
-  }
+  },
 }));

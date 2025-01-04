@@ -1,9 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import { Logo } from '../components/ui/Logo';
-import { Features } from '../components/marketing/Features';
-import { Footer } from '../components/layout/Footer';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { Logo } from "../components/ui/Logo";
+import { Features } from "../components/marketing/Features";
+import { Footer } from "../components/layout/Footer";
 
 export function LandingPage() {
   return (

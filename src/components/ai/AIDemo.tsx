@@ -1,17 +1,17 @@
-import React from 'react';
-import { AIInput } from './AIInput';
-import { AIResults } from './AIResults';
-import { useAIDemo } from './hooks/useAIDemo';
+import React from "react";
+import { AIInput } from "./AIInput";
+import { AIResults } from "./AIResults";
+import { useAIDemo } from "./hooks/useAIDemo";
 
 export function AIDemo() {
-  const { 
-    input, 
-    results, 
-    isLoading, 
-    error, 
+  const {
+    input,
+    results,
+    isLoading,
+    error,
     handleInputChange,
     handleClassify,
-    handleGenerate 
+    handleGenerate,
   } = useAIDemo();
 
   return (
@@ -23,9 +23,7 @@ export function AIDemo() {
         onGenerate={handleGenerate}
         isLoading={isLoading}
       />
-      {results.length > 0 && (
-        <AIResults results={results} error={error} />
-      )}
+      {results.length > 0 && <AIResults results={results} error={error} />}
     </div>
   );
 }

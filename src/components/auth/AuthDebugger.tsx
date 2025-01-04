@@ -1,6 +1,6 @@
-import React from 'react';
-import { useAuthDiagnostics } from '@/lib/supabase/hooks/useAuthDiagnostics';
-import { AlertCircle, CheckCircle, XCircle } from 'lucide-react';
+import React from "react";
+import { useAuthDiagnostics } from "@/lib/supabase/hooks/useAuthDiagnostics";
+import { AlertCircle, CheckCircle, XCircle } from "lucide-react";
 
 export function AuthDebugger() {
   const diagnostics = useAuthDiagnostics();
@@ -9,8 +9,10 @@ export function AuthDebugger() {
 
   return (
     <div className="fixed bottom-4 right-4 p-4 bg-white rounded-lg shadow-lg border border-gray-200 max-w-sm">
-      <h3 className="text-sm font-medium text-gray-900 mb-2">Auth Diagnostics</h3>
-      
+      <h3 className="text-sm font-medium text-gray-900 mb-2">
+        Auth Diagnostics
+      </h3>
+
       <div className="space-y-2">
         {Object.entries(diagnostics.results).map(([key, success]) => (
           <div key={key} className="flex items-center gap-2 text-sm">

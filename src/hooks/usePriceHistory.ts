@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { fetchPriceHistory } from '@/lib/coinbase/prices';
-import type { PriceHistory } from '@/lib/coinbase/types';
+import { useState, useEffect } from "react";
+import { fetchPriceHistory } from "@/lib/coinbase/prices";
+import type { PriceHistory } from "@/lib/coinbase/types";
 
 interface UsePriceHistoryOptions {
   granularity?: number;
@@ -10,7 +10,7 @@ interface UsePriceHistoryOptions {
 
 export function usePriceHistory(
   productId: string,
-  options: UsePriceHistoryOptions = {}
+  options: UsePriceHistoryOptions = {},
 ) {
   const [data, setData] = useState<PriceHistory[]>([]);
   const [isLoading, setIsLoading] = useState(false);

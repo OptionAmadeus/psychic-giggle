@@ -16,12 +16,12 @@ export interface CoinbaseBalance {
 
 export interface CoinbaseOrder {
   id: string;
-  side: 'buy' | 'sell';
+  side: "buy" | "sell";
   productId: string;
   size: string;
   price?: string;
-  type: 'market' | 'limit';
-  status: 'pending' | 'open' | 'done' | 'rejected';
+  type: "market" | "limit";
+  status: "pending" | "open" | "done" | "rejected";
   createdAt: string;
 }
 

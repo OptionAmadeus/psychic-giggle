@@ -1,6 +1,6 @@
-import React from 'react';
-import { DashboardHeader } from './DashboardHeader';
-import { DashboardSidebar } from './DashboardSidebar';
+import React from "react";
+import { DashboardHeader } from "./DashboardHeader";
+import { DashboardSidebar } from "./DashboardSidebar";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -13,9 +13,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       <div className="flex">
         <DashboardSidebar />
         <main className="flex-1 p-6">
-          <div className="max-w-7xl mx-auto">
-            {children}
-          </div>
+          <div className="max-w-7xl mx-auto">{children}</div>
         </main>
       </div>
     </div>

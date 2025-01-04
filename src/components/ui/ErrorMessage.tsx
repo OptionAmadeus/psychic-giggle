@@ -1,4 +1,4 @@
-import { AlertCircle } from 'lucide-react';
+import { AlertCircle } from "lucide-react";
 
 interface ErrorMessageProps {
   message: string;
@@ -6,7 +6,11 @@ interface ErrorMessageProps {
   className?: string;
 }
 
-export function ErrorMessage({ message, onDismiss, className = '' }: ErrorMessageProps) {
+export function ErrorMessage({
+  message,
+  onDismiss,
+  className = "",
+}: ErrorMessageProps) {
   return (
     <div className={`bg-red-50 border-l-4 border-red-400 p-4 ${className}`}>
       <div className="flex items-start">

@@ -1,7 +1,7 @@
-import { supabase } from '../client';
+import { supabase } from "../client";
 
 interface HealthCheckResult {
-  status: 'healthy' | 'unhealthy';
+  status: "healthy" | "unhealthy";
   timestamp: string;
   message: string;
   error?: string;
@@ -11,8 +11,8 @@ export async function checkSupabaseHealth(): Promise<HealthCheckResult> {
   try {
     // Test database connection
     const { error: dbError } = await supabase
-      .from('waitlist')
-      .select('count')
+      .from("waitlist")
+      .select("count")
       .limit(0);
 
     // Test auth service
@@ -21,17 +21,19 @@ export async function checkSupabaseHealth(): Promise<HealthCheckResult> {
     const isHealthy = !dbError && !authError;
 
     return {
-      status: isHealthy ? 'healthy' : 'unhealthy',
+      status: isHealthy ? "healthy" : "unhealthy",
       timestamp: new Date().toISOString(),
-      message: isHealthy ? 'All services operational' : 'Service experiencing issues',
-      error: dbError?.message || authError?.message
+      message: isHealthy
+        ? "All services operational"
+        : "Service experiencing issues",
+      error: dbError?.message || authError?.message,
     };
   } catch (error) {
     return {
-      status: 'unhealthy',
+      status: "unhealthy",
       timestamp: new Date().toISOString(),
-      message: 'Service experiencing issues',
-      error: error instanceof Error ? error.message : 'Unknown error'
+      message: "Service experiencing issues",
+      error: error instanceof Error ? error.message : "Unknown error",
     };
   }
 }

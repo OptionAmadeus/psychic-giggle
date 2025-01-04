@@ -1,6 +1,6 @@
-import React from 'react';
-import { ThumbsUp, MessageSquare } from 'lucide-react';
-import { LoadingSpinner } from '../ui/LoadingSpinner';
+import React from "react";
+import { ThumbsUp, MessageSquare } from "lucide-react";
+import { LoadingSpinner } from "../ui/LoadingSpinner";
 
 interface AIInputProps {
   value: string;
@@ -10,7 +10,13 @@ interface AIInputProps {
   isLoading: boolean;
 }
 
-export function AIInput({ value, onChange, onClassify, onGenerate, isLoading }: AIInputProps) {
+export function AIInput({
+  value,
+  onChange,
+  onClassify,
+  onGenerate,
+  isLoading,
+}: AIInputProps) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
       <textarea

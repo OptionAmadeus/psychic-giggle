@@ -1,31 +1,29 @@
-import CoinbaseWalletSDK from '@coinbase/wallet-sdk';
-import type { Asset } from '@/types/portfolio';
+import WalletSDK from "@coinbase/wallet-sdk";
+import type { Asset } from "@/types/portfolio";
 
 export class CoinbaseService {
   private provider: any;
 
   constructor() {
-    const coinbaseWallet = new CoinbaseWalletSDK({
-      appName: import.meta.env.VITE_COINBASE_APP_NAME || 'Self AI',
+    const coinbaseWallet = new WalletSDK({
+      appName: import.meta.env.VITE_COINBASE_APP_NAME || "Self AI",
       appLogoUrl: import.meta.env.VITE_COINBASE_APP_LOGO_URL,
-      darkMode: false,
-      overrideIsMetaMask: false
     });
 
-    this.provider = coinbaseWallet.makeWeb3Provider(
-      `https://mainnet.infura.io/v3/${import.meta.env.VITE_INFURA_ID}`,
-      1
-    );
+    this.provider = coinbaseWallet.makeWeb3Provider({
+      keysUrl: `https://mainnet.infura.io/v3/${import.meta.env.VITE_INFURA_ID}`,
+      options: "all",
+    });
   }
 
   async connect(): Promise<string> {
     try {
       const accounts = await this.provider.request({
-        method: 'eth_requestAccounts'
+        method: "eth_requestAccounts",
       });
       return accounts[0];
     } catch (error) {
-      throw new Error('Failed to connect wallet: ' + (error as Error).message);
+      throw new Error("Failed to connect wallet: " + (error as Error).message);
     }
   }
 
@@ -38,28 +36,36 @@ export class CoinbaseService {
     // This is a mock implementation
     return [
       {
-        id: 'bitcoin',
-        symbol: 'BTC',
-        name: 'Bitcoin',
+        id: "bitcoin",
+        symbol: "BTC",
+        name: "Bitcoin",
         balance: 0.5,
         price: 50000,
         value: 25000,
-        change24h: 2.5
-      }
+        change24h: 2.5,
+      },
     ];
   }
 }
 
-const _param = "value";
-const someFunction = (_param: any) => {
-  // ...
+// Define or import SpecificType
+type SpecificType = {
+  // Define the structure of SpecificType
+  id: string;
+  name: string;
 };
 
-function fetchData(data: { id: number; name: string }) {
-  // ...
-}
+// Replace `any` with a specific type
+const fetchData = (data: { id: string; name: string }) => {
+  // Implementation
+};
 
-// Or if the structure is not known, use `unknown`
-function fetchData(data: unknown) {
-  // ...
-}
+// Remove or use the `_param` and `someFunction` variables if they are declared but never used
+const someFunction = (_param: SpecificType) => {
+  // Implementation
+};
+
+// Example usage to avoid the `no-unused-vars` error
+const exampleData: SpecificType = { id: "1", name: "Example" };
+fetchData(exampleData);
+someFunction(exampleData);

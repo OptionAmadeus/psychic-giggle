@@ -1,7 +1,7 @@
-import React from 'react';
-import { TableHeader } from './TableHeader';
-import { AssetRow } from './AssetRow';
-import { usePortfolioStore } from '../../../stores/portfolio';
+import React from "react";
+import { TableHeader } from "./TableHeader";
+import { AssetRow } from "./AssetRow";
+import { usePortfolioStore } from "../../../stores/portfolio";
 
 export function PositionsTable() {
   const { assets } = usePortfolioStore();
@@ -24,7 +24,7 @@ export function PositionsTable() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
-                {assets.map(asset => (
+                {assets.map((asset) => (
                   <AssetRow key={asset.id} asset={asset} />
                 ))}
               </tbody>

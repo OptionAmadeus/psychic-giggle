@@ -1,6 +1,6 @@
-import React from 'react';
-import { Logo } from '../ui/Logo';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Logo } from "../ui/Logo";
+import { Link } from "react-router-dom";
 
 export function GetStartedHero() {
   return (

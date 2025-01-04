@@ -11,6 +11,7 @@
     "deploy:supabase": "supabase link --project-ref dvkpanntfxehgasngylg && supabase deploy config"
   },
   "dependencies": {
+    "@coinbase/wallet-sdk": "^4.2.4",
     "@supabase/supabase-js": "^2.47.10",
     "axios": "^1.7.9",
     "lucide-react": "^0.344.0",

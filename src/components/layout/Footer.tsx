@@ -1,7 +1,7 @@
-import React from 'react';
-import { Logo } from '../ui/Logo';
-import { FooterLink } from './FooterLink';
-import { FooterSection } from './FooterSection';
+import React from "react";
+import { Logo } from "../ui/Logo";
+import { FooterLink } from "./FooterLink";
+import { FooterSection } from "./FooterSection";
 
 const currentYear = new Date().getFullYear();
 
@@ -13,16 +13,25 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <Logo size="sm" />
             <p className="mt-4 text-gray-500 text-sm">
-              Self AI empowers investors with artificial intelligence to make smarter, 
-              data-driven decisions in their portfolio management journey.
+              Self AI empowers investors with artificial intelligence to make
+              smarter, data-driven decisions in their portfolio management
+              journey.
             </p>
           </div>
 
           <FooterSection title="Quick Links">
-            <li><FooterLink to="/about">About Us</FooterLink></li>
-            <li><FooterLink to="/contact">Contact</FooterLink></li>
-            <li><FooterLink to="/faq">FAQ</FooterLink></li>
-            <li><FooterLink to="/blog">Blog</FooterLink></li>
+            <li>
+              <FooterLink to="/about">About Us</FooterLink>
+            </li>
+            <li>
+              <FooterLink to="/contact">Contact</FooterLink>
+            </li>
+            <li>
+              <FooterLink to="/faq">FAQ</FooterLink>
+            </li>
+            <li>
+              <FooterLink to="/blog">Blog</FooterLink>
+            </li>
           </FooterSection>
         </div>
 

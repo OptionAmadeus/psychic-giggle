@@ -2,12 +2,19 @@ interface MetricCardProps {
   label: string;
   value: string | number;
   icon: React.ReactNode;
-  trend?: 'up' | 'down';
+  trend?: "up" | "down";
   className?: string;
 }
 
-export function MetricCard({ label, value, icon, trend, className = '' }: MetricCardProps) {
-  const trendColor = trend === 'up' ? 'text-green-500' : trend === 'down' ? 'text-red-500' : '';
+export function MetricCard({
+  label,
+  value,
+  icon,
+  trend,
+  className = "",
+}: MetricCardProps) {
+  const trendColor =
+    trend === "up" ? "text-green-500" : trend === "down" ? "text-red-500" : "";
 
   return (
     <div className={`p-4 bg-white rounded-lg shadow-sm ${className}`}>
@@ -15,9 +22,7 @@ export function MetricCard({ label, value, icon, trend, className = '' }: Metric
         {icon}
         <span className="text-sm text-gray-600">{label}</span>
       </div>
-      <p className={`text-lg sm:text-2xl font-bold ${trendColor}`}>
-        {value}
-      </p>
+      <p className={`text-lg sm:text-2xl font-bold ${trendColor}`}>{value}</p>
     </div>
   );
 }

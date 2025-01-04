@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { ArrowUpRight, ArrowDownRight } from 'lucide-react';
-import { useCoinbaseTrading } from '@/hooks/useCoinbaseTrading';
-import { PriceDisplay } from './PriceDisplay';
-import { LoadingSpinner } from '../ui/LoadingSpinner';
-import { ErrorMessage } from '../ui/ErrorMessage';
-import type { TradeRecommendation } from '@/types/portfolio';
+import { useState } from "react";
+import { ArrowUpRight, ArrowDownRight } from "lucide-react";
+import { useCoinbaseTrading } from "@/hooks/useCoinbaseTrading";
+import { PriceDisplay } from "./PriceDisplay";
+import { LoadingSpinner } from "../ui/LoadingSpinner";
+import { ErrorMessage } from "../ui/ErrorMessage";
+import type { TradeRecommendation } from "@/types/portfolio";
 
 interface TradingPanelProps {
   productId: string;
@@ -17,7 +17,7 @@ export function TradingPanel({ productId, recommendation }: TradingPanelProps) {
 
   const handleTrade = async () => {
     if (!recommendation) return;
-    
+
     try {
       const result = await executeTrade(recommendation);
       if (result) {
@@ -25,7 +25,7 @@ export function TradingPanel({ productId, recommendation }: TradingPanelProps) {
         setTimeout(() => setShowConfirmation(false), 3000);
       }
     } catch (err) {
-      console.error('Trade execution failed:', err);
+      console.error("Trade execution failed:", err);
     }
   };
 
@@ -41,19 +41,21 @@ export function TradingPanel({ productId, recommendation }: TradingPanelProps) {
       {recommendation && (
         <div className="mt-4">
           <div className="flex items-center gap-2 mb-2">
-            {recommendation.action === 'buy' ? (
+            {recommendation.action === "buy" ? (
               <ArrowDownRight className="w-5 h-5 text-green-500" />
             ) : (
               <ArrowUpRight className="w-5 h-5 text-red-500" />
             )}
-            <span className="font-medium capitalize">{recommendation.action}</span>
+            <span className="font-medium capitalize">
+              {recommendation.action}
+            </span>
           </div>
-          
+
           <p className="text-gray-600 mb-4">{recommendation.reason}</p>
-          
+
           <div className="flex justify-between items-center mb-4">
             <span className="text-sm text-gray-500">
-              Amount: {recommendation.amount} {productId.split('-')[0]}
+              Amount: {recommendation.amount} {productId.split("-")[0]}
             </span>
             <span className="text-sm text-gray-500">
               Confidence: {(recommendation.confidence * 100).toFixed(0)}%
@@ -65,9 +67,10 @@ export function TradingPanel({ productId, recommendation }: TradingPanelProps) {
             disabled={isExecuting}
             className={`
               w-full py-2 px-4 rounded-lg font-medium
-              ${recommendation.action === 'buy'
-                ? 'bg-green-600 hover:bg-green-700 text-white'
-                : 'bg-red-600 hover:bg-red-700 text-white'
+              ${
+                recommendation.action === "buy"
+                  ? "bg-green-600 hover:bg-green-700 text-white"
+                  : "bg-red-600 hover:bg-red-700 text-white"
               }
               disabled:opacity-50 disabled:cursor-not-allowed
             `}

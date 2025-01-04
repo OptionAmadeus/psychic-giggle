@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { waitlistService } from '@/services/waitlist.service';
-import { LoadingSpinner } from '../ui/LoadingSpinner';
-import { ErrorMessage } from '../ui/ErrorMessage';
+import React, { useState } from "react";
+import { waitlistService } from "@/services/waitlist.service";
+import { LoadingSpinner } from "../ui/LoadingSpinner";
+import { ErrorMessage } from "../ui/ErrorMessage";
 
-export function GetStartedForm() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
+const GetStartedForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -16,7 +16,7 @@ export function GetStartedForm() {
     setError(null);
 
     if (!name.trim()) {
-      setError('Name is required');
+      setError("Name is required");
       return;
     }
 
@@ -26,7 +26,7 @@ export function GetStartedForm() {
       setPosition(result.position);
       setSuccess(true);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to join waitlist');
+      setError(err instanceof Error ? err.message : "Failed to join waitlist");
     } finally {
       setIsLoading(false);
     }
@@ -40,7 +40,8 @@ export function GetStartedForm() {
             You're on the list!
           </h2>
           <p className="text-gray-600 mb-4">
-            Thank you for your interest in Self AI. You are #{position} on our waitlist.
+            Thank you for your interest in Self AI. You are #{position} on our
+            waitlist.
           </p>
           <p className="text-gray-600">
             We'll notify you as soon as we're ready to welcome new users.
@@ -57,7 +58,8 @@ export function GetStartedForm() {
           Join the waitlist
         </h2>
         <p className="text-gray-600 mb-8">
-          Be among the first to experience the future of AI-powered portfolio management.
+          Be among the first to experience the future of AI-powered portfolio
+          management.
         </p>
 
         <p>It doesn&apos;t work.</p>
@@ -65,12 +67,13 @@ export function GetStartedForm() {
         <p>Let&apos;s get started!</p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {error && (
-            <ErrorMessage message={error} />
-          )}
+          {error && <ErrorMessage message={error} />}
 
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Full Name
             </label>
             <input
@@ -84,7 +87,10 @@ export function GetStartedForm() {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700 mb-1"
+            >
               Email Address
             </label>
             <input
@@ -102,10 +108,12 @@ export function GetStartedForm() {
             disabled={isLoading}
             className="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 transition-colors disabled:opacity-50"
           >
-            {isLoading ? <LoadingSpinner size="sm" /> : 'Join Waitlist'}
+            {isLoading ? <LoadingSpinner size="sm" /> : "Join Waitlist"}
           </button>
         </form>
       </div>
     </div>
   );
-}
+};
+
+export default GetStartedForm;

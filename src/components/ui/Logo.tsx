@@ -1,17 +1,17 @@
-import { Brain } from 'lucide-react';
+import { Brain } from "lucide-react";
 
 interface LogoProps {
-  size?: 'sm' | 'md' | 'lg';
+  size?: "sm" | "md" | "lg";
   className?: string;
 }
 
 const sizes = {
-  sm: { icon: 'w-6 h-6', text: 'text-xl' },
-  md: { icon: 'w-8 h-8', text: 'text-2xl' },
-  lg: { icon: 'w-10 h-10', text: 'text-3xl' }
+  sm: { icon: "w-6 h-6", text: "text-xl" },
+  md: { icon: "w-8 h-8", text: "text-2xl" },
+  lg: { icon: "w-10 h-10", text: "text-3xl" },
 } as const;
 
-export function Logo({ size = 'md', className = '' }: LogoProps) {
+export function Logo({ size = "md", className = "" }: LogoProps) {
   const sizeClasses = sizes[size];
 
   return (

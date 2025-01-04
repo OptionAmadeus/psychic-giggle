@@ -1,6 +1,6 @@
-import { usePortfolioStore } from '@/stores/portfolio';
-import { formatCurrency, formatPercentage } from '@/utils/formatters';
-import { TrendingUp, TrendingDown, DollarSign } from 'lucide-react';
+import { usePortfolioStore } from "@/stores/portfolio";
+import { formatCurrency, formatPercentage } from "@/utils/formatters";
+import { TrendingUp, TrendingDown, DollarSign } from "lucide-react";
 
 export function PortfolioSummary() {
   const { stats } = usePortfolioStore();
@@ -14,7 +14,9 @@ export function PortfolioSummary() {
             <DollarSign className="w-5 h-5 text-blue-600" />
             <span className="text-sm text-gray-600">Total Value</span>
           </div>
-          <p className="text-2xl font-bold">{formatCurrency(stats.totalValue)}</p>
+          <p className="text-2xl font-bold">
+            {formatCurrency(stats.totalValue)}
+          </p>
         </div>
         <div className="p-4 bg-gray-50 rounded-lg">
           <div className="flex items-center gap-2 mb-2">
@@ -25,9 +27,11 @@ export function PortfolioSummary() {
             )}
             <span className="text-sm text-gray-600">24h Change</span>
           </div>
-          <p className={`text-2xl font-bold ${
-            stats.totalChange24h >= 0 ? 'text-green-500' : 'text-red-500'
-          }`}>
+          <p
+            className={`text-2xl font-bold ${
+              stats.totalChange24h >= 0 ? "text-green-500" : "text-red-500"
+            }`}
+          >
             {formatPercentage(stats.totalChange24h)}
           </p>
         </div>

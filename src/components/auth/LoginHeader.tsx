@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Logo } from '../ui/Logo';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Logo } from "../ui/Logo";
 
 export function LoginHeader() {
   return (
@@ -12,8 +12,11 @@ export function LoginHeader() {
         Sign in to your account
       </h2>
       <p className="mt-2 text-center text-sm text-gray-600">
-        Or{' '}
-        <Link to="/get-started" className="font-medium text-blue-600 hover:text-blue-500">
+        Or{" "}
+        <Link
+          to="/get-started"
+          className="font-medium text-blue-600 hover:text-blue-500"
+        >
           join our waitlist
         </Link>
       </p>

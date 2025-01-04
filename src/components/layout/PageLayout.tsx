@@ -1,9 +1,12 @@
-import React from 'react';
-import { Header } from './Header';
-import { Footer } from './Footer';
-import { PageLayoutProps } from './types';
+import React from "react";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+import { PageLayoutProps } from "./types";
 
-export function PageLayout({ children, showGetStarted = true }: PageLayoutProps) {
+export function PageLayout({
+  children,
+  showGetStarted = true,
+}: PageLayoutProps) {
   return (
     <div className="min-h-screen flex flex-col">
       <Header showGetStarted={showGetStarted} />

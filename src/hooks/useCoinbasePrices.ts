@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
-import { coinbaseWebSocket } from '@/lib/coinbase/websocket';
-import type { PriceUpdate } from '@/lib/coinbase/types';
+import { useState, useEffect, useCallback } from "react";
+import { coinbaseWebSocket } from "@/lib/coinbase/websocket";
+import type { PriceUpdate } from "@/lib/coinbase/types";
 
 interface PriceState {
   prices: Record<string, number>;
@@ -10,16 +10,16 @@ interface PriceState {
 export function useCoinbasePrices(productIds: string[]) {
   const [state, setState] = useState<PriceState>({
     prices: {},
-    lastUpdate: null
+    lastUpdate: null,
   });
 
   const handlePriceUpdate = useCallback((update: PriceUpdate) => {
-    setState(prevState => ({
+    setState((prevState) => ({
       prices: {
         ...prevState.prices,
-        [update.product_id]: update.price
+        [update.product_id]: update.price,
       },
-      lastUpdate: new Date()
+      lastUpdate: new Date(),
     }));
   }, []);
 

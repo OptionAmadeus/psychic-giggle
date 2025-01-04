@@ -1,32 +1,32 @@
-import { useState } from 'react';
-import { BarChart3, Brain } from 'lucide-react';
-import { PortfolioSummary } from './PortfolioSummary';
-import { AIRecommendations } from '../ai/AIRecommendations';
-import { TabButton } from '../ui/TabButton';
+import { useState } from "react";
+import { BarChart3, Brain } from "lucide-react";
+import { PortfolioSummary } from "./PortfolioSummary";
+import { AIRecommendations } from "../ai/AIRecommendations";
+import { TabButton } from "../ui/TabButton";
 
-type Tab = 'summary' | 'recommendations';
+type Tab = "summary" | "recommendations";
 
 const TABS = [
   {
-    id: 'summary' as const,
-    label: 'Portfolio',
-    icon: <BarChart3 className="w-5 h-5" />
+    id: "summary" as const,
+    label: "Portfolio",
+    icon: <BarChart3 className="w-5 h-5" />,
   },
   {
-    id: 'recommendations' as const,
-    label: 'AI Insights',
-    icon: <Brain className="w-5 h-5" />
-  }
+    id: "recommendations" as const,
+    label: "AI Insights",
+    icon: <Brain className="w-5 h-5" />,
+  },
 ] as const;
 
 export function PortfolioInsights() {
-  const [activeTab, setActiveTab] = useState<Tab>('summary');
+  const [activeTab, setActiveTab] = useState<Tab>("summary");
 
   return (
     <div className="bg-white rounded-lg shadow-lg">
       <div className="border-b border-gray-200">
         <nav className="flex -mb-px" aria-label="Tabs">
-          {TABS.map(tab => (
+          {TABS.map((tab) => (
             <TabButton
               key={tab.id}
               isActive={activeTab === tab.id}
@@ -38,13 +38,9 @@ export function PortfolioInsights() {
           ))}
         </nav>
       </div>
-      
+
       <div className="p-4 sm:p-6">
-        {activeTab === 'summary' ? (
-          <PortfolioSummary />
-        ) : (
-          <AIRecommendations />
-        )}
+        {activeTab === "summary" ? <PortfolioSummary /> : <AIRecommendations />}
       </div>
     </div>
   );

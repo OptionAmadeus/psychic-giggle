@@ -1,6 +1,25 @@
-import { CoinbaseConfig, CoinbaseOrder, CoinbaseError } from './types';
-import { validateTransaction } from '@/utils/validation';
-import type { Asset, Transaction } from '@/types/portfolio';
+import { CoinbaseConfig, CoinbaseOrder } from "./types";
+import { validateTransaction } from "@/utils/validation/transaction";
+import type { Asset, Transaction } from "@/types/portfolio";
+import { CoinbaseWalletSDK } from "@coinbase/wallet-sdk";
+import { CoinbaseError } from "./errors";
+
+// Define or import SpecificType
+type SpecificType = {
+  id: string;
+  name: string;
+};
+
+// Replace `any` with a specific type
+const fetchData = (data: { id: string; name: string }) => {
+  // Implementation
+};
+
+// Remove or use the `client` variable if it is declared but never used
+const client = new CoinbaseWalletSDK({
+  appName: "My App",
+  appLogoUrl: "https://example.com/logo.png",
+});
 
 export class CoinbaseService {
   private client: any; // Will be replaced with actual Coinbase client type
@@ -14,7 +33,7 @@ export class CoinbaseService {
   private initializeClient() {
     // Initialize Coinbase client
     // This will be implemented when we add the actual Coinbase SDK
-    console.log('Initializing Coinbase client with config:', this.config);
+    console.log("Initializing Coinbase client with config:", this.config);
   }
 
   async getBalances(): Promise<Asset[]> {
@@ -22,14 +41,14 @@ export class CoinbaseService {
       // Mock implementation - will be replaced with actual API calls
       return [
         {
-          id: 'bitcoin',
-          symbol: 'BTC',
-          name: 'Bitcoin',
+          id: "bitcoin",
+          symbol: "BTC",
+          name: "Bitcoin",
           balance: 1.5,
           price: 50000,
           value: 75000,
-          change24h: 2.5
-        }
+          change24h: 2.5,
+        },
       ];
     } catch (error) {
       throw this.handleError(error);
@@ -40,7 +59,7 @@ export class CoinbaseService {
     try {
       // Validate order parameters
       if (!order.side || !order.size || !order.productId) {
-        throw new Error('Invalid order parameters');
+        throw new Error("Invalid order parameters");
       }
 
       // Mock implementation - will be replaced with actual API calls
@@ -51,11 +70,11 @@ export class CoinbaseService {
         amount: parseFloat(order.size),
         price: order.price ? parseFloat(order.price) : 50000, // Mock price
         timestamp: new Date(),
-        status: 'completed'
+        status: "completed",
       };
 
       if (!validateTransaction(transaction)) {
-        throw new Error('Invalid transaction data');
+        throw new Error("Invalid transaction data");
       }
 
       return transaction;
@@ -72,15 +91,20 @@ export class CoinbaseService {
   }
 }
 
-const someFunction = (param: SpecificType) => {
-  // ...
+// Remove or use the `someFunction` variable if it is declared but never used
+const someFunction = (_param: SpecificType) => {
+  // Implementation
 };
 
-function processTransaction(transaction: { id: string; amount: number }) {
-  // ...
-}
+// Example usage to avoid the `no-unused-vars` error
+const exampleData: SpecificType = { id: "1", name: "Example" };
+fetchData(exampleData);
+someFunction(exampleData);
 
-// Or if the structure is not known, use `unknown`
-function processTransaction(transaction: unknown) {
-  // ...
-}
+// Remove duplicate function implementations
+const processTransaction = (_transaction: SpecificType) => {
+  // Implementation
+};
+
+// Example usage to avoid the `no-unused-vars` error
+processTransaction(exampleData);

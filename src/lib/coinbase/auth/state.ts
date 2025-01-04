@@ -1,15 +1,15 @@
-import { OAuthStorage } from './storage';
-import type { OAuthState } from './types';
+import { OAuthStorage } from "./storage";
+import type { OAuthState } from "./types";
 
 export const OAuthStateManager = {
-  save(returnUrl: string = '/dashboard'): string {
+  save(returnUrl: string = "/dashboard"): string {
     const state = crypto.randomUUID();
     const stateObj: OAuthState = {
       state,
       returnUrl,
-      timestamp: Date.now()
+      timestamp: Date.now(),
     };
-    
+
     OAuthStorage.setState(state, stateObj);
     return state;
   },
@@ -25,5 +25,5 @@ export const OAuthStateManager = {
 
     OAuthStorage.clearState();
     return stored;
-  }
+  },
 };

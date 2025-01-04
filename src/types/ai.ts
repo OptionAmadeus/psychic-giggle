@@ -1,12 +1,12 @@
 export interface AIResult {
-  type: 'sentiment' | 'generation';
+  type: "sentiment" | "generation";
   input: string;
   result: SentimentResult | GenerationResult;
   timestamp: number;
 }
 
 export interface SentimentResult {
-  label: 'POSITIVE' | 'NEGATIVE';
+  label: "POSITIVE" | "NEGATIVE";
   score: number;
 }
 

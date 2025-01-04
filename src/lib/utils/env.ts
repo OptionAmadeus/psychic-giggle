@@ -3,15 +3,14 @@
  * @throws {Error} If any required variables are missing
  */
 export function validateEnvironment(): void {
-  const required = [
-    'VITE_API_URL',
-    'VITE_INFURA_ID'
-  ];
+  const required = ["VITE_API_URL", "VITE_INFURA_ID"];
 
-  const missing = required.filter(key => !import.meta.env[key]);
-  
+  const missing = required.filter((key) => !import.meta.env[key]);
+
   if (missing.length > 0) {
-    throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
+    throw new Error(
+      `Missing required environment variables: ${missing.join(", ")}`,
+    );
   }
 }
 

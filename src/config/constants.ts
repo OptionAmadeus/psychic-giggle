@@ -1,6 +1,6 @@
 // API Configuration
 export const API_CONFIG = {
-  baseUrl: import.meta.env.VITE_API_URL || 'http://localhost:3000/api',
+  baseUrl: import.meta.env.VITE_API_URL || "http://localhost:3000/api",
   timeout: 10000,
   retryAttempts: 3,
 } as const;
@@ -9,7 +9,7 @@ export const API_CONFIG = {
 export const WEB3_CONFIG = {
   infuraId: import.meta.env.VITE_INFURA_ID,
   coinbaseConfig: {
-    appName: import.meta.env.VITE_COINBASE_APP_NAME || 'Self AI',
+    appName: import.meta.env.VITE_COINBASE_APP_NAME || "Self AI",
     appLogoUrl: import.meta.env.VITE_COINBASE_APP_LOGO_URL,
     darkMode: false,
     defaultChainId: 1, // Ethereum Mainnet
@@ -18,8 +18,8 @@ export const WEB3_CONFIG = {
 
 // Feature Flags
 export const FEATURES = {
-  enableAnalytics: import.meta.env.VITE_ENABLE_ANALYTICS === 'true',
-  enableMockData: import.meta.env.VITE_ENABLE_MOCK_DATA === 'true',
+  enableAnalytics: import.meta.env.VITE_ENABLE_ANALYTICS === "true",
+  enableMockData: import.meta.env.VITE_ENABLE_MOCK_DATA === "true",
 } as const;
 
 // Cache Configuration

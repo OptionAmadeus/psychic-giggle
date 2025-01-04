@@ -1,6 +1,6 @@
-import { useConnectWallet } from '@web3-onboard/react';
-import { useCallback, useEffect } from 'react';
-import { usePortfolioStore } from '../stores/portfolio';
+import { useConnectWallet } from "@web3-onboard/react";
+import { useCallback, useEffect } from "react";
+import { usePortfolioStore } from "../stores/portfolio";
 
 export function useWallet() {
   const [{ wallet }] = useConnectWallet();

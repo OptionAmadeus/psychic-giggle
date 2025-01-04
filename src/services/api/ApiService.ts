@@ -1,6 +1,6 @@
-import { apiClient } from '@/lib/api/client';
-import { ApiError, NetworkError } from '@/lib/api/errors';
-import type { ApiResponse } from '@/lib/api/types';
+import { apiClient } from "@/lib/api/client";
+import { ApiError, NetworkError } from "@/lib/api/errors";
+import type { ApiResponse } from "@/lib/api/types";
 
 export class ApiService {
   protected async get<T>(url: string): Promise<T> {
@@ -28,10 +28,8 @@ export class ApiService {
   }
 }
 
-const _param = "value";
-const someFunction = (_param: any) => {
+import type { SpecificType } from "@/lib/api/types";
+
+const someFunction = (_param: SpecificType) => {
   // ...
 };
-
-// Remove this line if `someFunction` is not used
-// const someFunction = (param: SpecificType) => { ... };

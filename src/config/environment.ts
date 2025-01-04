@@ -1,10 +1,10 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 const envSchema = z.object({
   VITE_API_URL: z.string().url(),
   VITE_INFURA_ID: z.string().min(1),
-  VITE_ENABLE_ANALYTICS: z.string().transform((val: string) => val === 'true'),
-  VITE_ENABLE_MOCK_DATA: z.string().transform((val: string) => val === 'true'),
+  VITE_ENABLE_ANALYTICS: z.string().transform((val: string) => val === "true"),
+  VITE_ENABLE_MOCK_DATA: z.string().transform((val: string) => val === "true"),
 });
 
 export type Environment = z.infer<typeof envSchema>;
@@ -12,11 +12,11 @@ export type Environment = z.infer<typeof envSchema>;
 export const config = {
   infuraId: import.meta.env.VITE_INFURA_ID,
   coinbaseConfig: {
-    appName: import.meta.env.VITE_COINBASE_APP_NAME || 'Self AI',
+    appName: import.meta.env.VITE_COINBASE_APP_NAME || "Self AI",
     appLogoUrl: import.meta.env.VITE_COINBASE_APP_LOGO_URL,
     darkMode: false,
-    defaultChainId: 1
-  }
+    defaultChainId: 1,
+  },
 };
 
 export function validateEnvironment(): Environment {
@@ -28,8 +28,8 @@ export function validateEnvironment(): Environment {
       VITE_ENABLE_MOCK_DATA: import.meta.env.VITE_ENABLE_MOCK_DATA,
     });
   } catch (error) {
-    console.error('Environment validation failed:', error);
-    throw new Error('Invalid environment configuration');
+    console.error("Environment validation failed:", error);
+    throw new Error("Invalid environment configuration");
   }
 }
 

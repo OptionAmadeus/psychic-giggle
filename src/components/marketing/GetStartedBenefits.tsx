@@ -1,22 +1,25 @@
-import React from 'react';
-import { CheckCircle2, Brain, LineChart, Clock } from 'lucide-react';
+import React from "react";
+import { CheckCircle2, Brain, LineChart, Clock } from "lucide-react";
 
 const benefits = [
   {
-    title: 'Early Access',
-    description: 'Be among the first to experience our revolutionary AI-powered portfolio management platform.',
-    icon: Clock
+    title: "Early Access",
+    description:
+      "Be among the first to experience our revolutionary AI-powered portfolio management platform.",
+    icon: Clock,
   },
   {
-    title: 'AI-Powered Insights',
-    description: 'Get personalized investment recommendations based on your goals and risk tolerance.',
-    icon: Brain
+    title: "AI-Powered Insights",
+    description:
+      "Get personalized investment recommendations based on your goals and risk tolerance.",
+    icon: Brain,
   },
   {
-    title: 'Real-time Analytics',
-    description: 'Track your portfolio performance with live updates and detailed metrics.',
-    icon: LineChart
-  }
+    title: "Real-time Analytics",
+    description:
+      "Track your portfolio performance with live updates and detailed metrics.",
+    icon: LineChart,
+  },
 ];
 
 export function GetStartedBenefits() {
@@ -25,7 +28,7 @@ export function GetStartedBenefits() {
       <h3 className="text-2xl font-semibold text-gray-900 mb-8">
         Join the future of investing
       </h3>
-      
+
       <div className="space-y-8">
         {benefits.map((benefit, index) => (
           <div key={index} className="flex gap-4">
@@ -36,9 +39,7 @@ export function GetStartedBenefits() {
               <h4 className="text-lg font-medium text-gray-900 mb-2">
                 {benefit.title}
               </h4>
-              <p className="text-gray-600">
-                {benefit.description}
-              </p>
+              <p className="text-gray-600">{benefit.description}</p>
             </div>
           </div>
         ))}

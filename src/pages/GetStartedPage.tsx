@@ -1,7 +1,7 @@
-import React from 'react';
-import { PageLayout } from '../components/layout/PageLayout';
-import { GetStartedForm } from '../components/marketing/GetStartedForm';
-import { GetStartedBenefits } from '../components/marketing/GetStartedBenefits';
+import React from "react";
+import { PageLayout } from "../components/layout/PageLayout";
+import { GetStartedForm } from "../components/marketing/GetStartedForm";
+import { GetStartedBenefits } from "../components/marketing/GetStartedBenefits";
 
 export function GetStartedPage() {
   return (

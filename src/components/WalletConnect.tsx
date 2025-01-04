@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Wallet } from 'lucide-react';
-import { initializeOAuthFlow } from '@/lib/coinbase/auth';
-import { LoadingSpinner } from './ui/LoadingSpinner';
+import React, { useState } from "react";
+import { Wallet } from "lucide-react";
+import { initializeOAuthFlow } from "@/lib/coinbase/auth";
+import { LoadingSpinner } from "./ui/LoadingSpinner";
 
 export function WalletConnect() {
   const [isLoading, setIsLoading] = useState(false);
@@ -11,7 +11,7 @@ export function WalletConnect() {
     try {
       await initializeOAuthFlow();
     } catch (error) {
-      console.error('Failed to initialize OAuth flow:', error);
+      console.error("Failed to initialize OAuth flow:", error);
     } finally {
       setIsLoading(false);
     }
@@ -28,7 +28,7 @@ export function WalletConnect() {
       ) : (
         <Wallet className="w-5 h-5" />
       )}
-      {isLoading ? 'Connecting...' : 'Connect Wallet'}
+      {isLoading ? "Connecting..." : "Connect Wallet"}
     </button>
   );
 }

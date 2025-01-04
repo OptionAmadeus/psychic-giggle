@@ -1,7 +1,7 @@
-import React from 'react';
-import { PageLayout } from '../components/layout/PageLayout';
-import { BlogList } from '../components/blog/BlogList';
-import { BookOpen } from 'lucide-react';
+import React from "react";
+import { PageLayout } from "../components/layout/PageLayout";
+import { BlogList } from "../components/blog/BlogList";
+import { BookOpen } from "lucide-react";
 
 export function BlogPage() {
   return (
@@ -15,7 +15,8 @@ export function BlogPage() {
             Latest Insights
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Expert analysis on AI, cryptocurrency, and investment strategies from the Self AI team.
+            Expert analysis on AI, cryptocurrency, and investment strategies
+            from the Self AI team.
           </p>
         </div>
 

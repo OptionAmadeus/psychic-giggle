@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import { runAuthDiagnostics } from '../debug/diagnostics';
-import { authLogger } from '../debug/logger';
+import { useState, useEffect } from "react";
+import { runAuthDiagnostics } from "../debug/diagnostics";
+import { authLogger } from "../debug/logger";
 
 export function useAuthDiagnostics() {
   const [diagnostics, setDiagnostics] = useState<{
@@ -14,9 +14,9 @@ export function useAuthDiagnostics() {
       try {
         const results = await runAuthDiagnostics();
         setDiagnostics(results);
-        
+
         if (!results.success) {
-          authLogger.debug('Auth diagnostics failed:', results);
+          authLogger.debug("Auth diagnostics failed:", results);
         }
       } catch (error) {
         authLogger.error(error);
@@ -25,9 +25,9 @@ export function useAuthDiagnostics() {
           results: {
             connection: false,
             session: false,
-            config: false
+            config: false,
           },
-          error
+          error,
         });
       }
     }

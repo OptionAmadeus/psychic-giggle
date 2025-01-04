@@ -1,10 +1,11 @@
-import React from 'react';
-import { RecommendationList } from './RecommendationList';
-import { RefreshButton } from './RefreshButton';
-import { usePortfolioStore } from '@/stores/portfolio';
+import React from "react";
+import { RecommendationList } from "./RecommendationList";
+import { RefreshButton } from "./RefreshButton";
+import { usePortfolioStore } from "@/stores/portfolio";
 
 export function AIRecommendations() {
-  const { recommendations, isLoading, getRecommendations } = usePortfolioStore();
+  const { recommendations, isLoading, getRecommendations } =
+    usePortfolioStore();
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">

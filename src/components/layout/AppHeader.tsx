@@ -1,6 +1,6 @@
-import React from 'react';
-import { useAuthStore } from '../../stores/auth';
-import { Logo } from '../ui/Logo';
+import React from "react";
+import { useAuthStore } from "../../stores/auth";
+import { Logo } from "../ui/Logo";
 
 export function AppHeader() {
   const { logout } = useAuthStore();

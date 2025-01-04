@@ -1,5 +1,5 @@
-import React from 'react';
-import { useAuthSession } from '@/lib/supabase/hooks/useAuthSession';
+import React from "react";
+import { useAuthSession } from "@/lib/supabase/hooks/useAuthSession";
 
 interface AuthProviderProps {
   children: React.ReactNode;

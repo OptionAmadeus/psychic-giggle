@@ -1,4 +1,4 @@
-import { Database as GeneratedDatabase } from '@/types/supabase';
+import { Database as GeneratedDatabase } from "@/types/supabase";
 
 export type Database = GeneratedDatabase;
 

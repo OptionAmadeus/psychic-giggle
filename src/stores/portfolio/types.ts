@@ -1,4 +1,8 @@
-import type { Asset, Transaction, TradeRecommendation } from '@/types/portfolio';
+import type {
+  Asset,
+  Transaction,
+  TradeRecommendation,
+} from "@/types/portfolio";
 
 export interface PortfolioState {
   assets: Asset[];

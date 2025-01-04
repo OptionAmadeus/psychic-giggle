@@ -1,5 +1,5 @@
-import React from 'react';
-import { Mail } from 'lucide-react';
+import React from "react";
+import { Mail } from "lucide-react";
 
 export function ContactInfo() {
   return (
@@ -11,7 +11,10 @@ export function ContactInfo() {
         </div>
         <div>
           <p className="text-gray-600">Support:</p>
-          <a href="mailto:support@selfai.com" className="text-blue-600 hover:text-blue-700">
+          <a
+            href="mailto:support@selfai.com"
+            className="text-blue-600 hover:text-blue-700"
+          >
             support@selfai.com
           </a>
         </div>

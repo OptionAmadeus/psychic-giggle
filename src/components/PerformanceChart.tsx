@@ -1,6 +1,14 @@
-import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { usePortfolioStore } from '../stores/portfolio';
+import React from "react";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+} from "recharts";
+import { usePortfolioStore } from "../stores/portfolio";
 
 export function PerformanceChart() {
   const { performanceHistory, isConnected } = usePortfolioStore();
@@ -14,19 +22,26 @@ export function PerformanceChart() {
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={performanceHistory}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis 
-              dataKey="timestamp" 
-              tickFormatter={(timestamp) => new Date(timestamp).toLocaleDateString()}
+            <XAxis
+              dataKey="timestamp"
+              tickFormatter={(timestamp) =>
+                new Date(timestamp).toLocaleDateString()
+              }
             />
             <YAxis />
             <Tooltip
-              formatter={(value) => [`$${value.toLocaleString()}`, 'Portfolio Value']}
-              labelFormatter={(timestamp) => new Date(timestamp).toLocaleString()}
+              formatter={(value) => [
+                `$${value.toLocaleString()}`,
+                "Portfolio Value",
+              ]}
+              labelFormatter={(timestamp) =>
+                new Date(timestamp).toLocaleString()
+              }
             />
-            <Line 
-              type="monotone" 
-              dataKey="totalValue" 
-              stroke="#2563eb" 
+            <Line
+              type="monotone"
+              dataKey="totalValue"
+              stroke="#2563eb"
               strokeWidth={2}
               dot={false}
             />

@@ -1,11 +1,11 @@
-import { getEnvironmentConfig } from './environment';
-import { validateConfig } from './validation';
-import type { SupabaseConfig } from './types';
+import { getEnvironmentConfig } from "./environment";
+import { validateConfig } from "./validation";
+import type { SupabaseConfig } from "./types";
 
 export function getSupabaseConfig(): SupabaseConfig {
   const envConfig = getEnvironmentConfig();
   return validateConfig(envConfig);
 }
 
-export * from './types';
-export * from './constants';
+export * from "./types";
+export * from "./constants";

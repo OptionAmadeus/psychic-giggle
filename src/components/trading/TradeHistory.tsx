@@ -1,7 +1,7 @@
-import React from 'react';
-import { ArrowUpRight, ArrowDownRight, Clock } from 'lucide-react';
-import { usePortfolioStore } from '@/stores/portfolio';
-import { formatCurrency, formatCryptoAmount } from '@/utils/formatters';
+import React from "react";
+import { ArrowUpRight, ArrowDownRight, Clock } from "lucide-react";
+import { usePortfolioStore } from "@/stores/portfolio";
+import { formatCurrency, formatCryptoAmount } from "@/utils/formatters";
 
 export function TradeHistory() {
   const { transactions } = usePortfolioStore();
@@ -22,14 +22,15 @@ export function TradeHistory() {
           className="bg-white rounded-lg shadow p-4 flex items-center justify-between"
         >
           <div className="flex items-center gap-3">
-            {tx.type === 'buy' ? (
+            {tx.type === "buy" ? (
               <ArrowDownRight className="w-5 h-5 text-green-500" />
             ) : (
               <ArrowUpRight className="w-5 h-5 text-red-500" />
             )}
             <div>
               <p className="font-medium">
-                {tx.type.toUpperCase()} {formatCryptoAmount(tx.amount)} {tx.asset}
+                {tx.type.toUpperCase()} {formatCryptoAmount(tx.amount)}{" "}
+                {tx.asset}
               </p>
               <div className="flex items-center gap-1 text-sm text-gray-500">
                 <Clock className="w-4 h-4" />

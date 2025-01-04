@@ -1,9 +1,10 @@
-import React from 'react';
-import { Brain, RefreshCw } from 'lucide-react';
-import { usePortfolioStore } from '../../stores/portfolio';
+import React from "react";
+import { Brain, RefreshCw } from "lucide-react";
+import { usePortfolioStore } from "../../stores/portfolio";
 
 export function AIRecommendations() {
-  const { recommendations, isLoading, getRecommendations } = usePortfolioStore();
+  const { recommendations, isLoading, getRecommendations } =
+    usePortfolioStore();
 
   return (
     <div>
@@ -17,13 +18,15 @@ export function AIRecommendations() {
           Refresh
         </button>
       </div>
-      
+
       <div className="space-y-4">
         {recommendations.map((rec, index) => (
           <div key={index} className="p-4 bg-gray-50 rounded-lg">
             <div className="flex items-center gap-2 mb-2">
               <Brain className="w-5 h-5 text-purple-500" />
-              <span className="font-semibold capitalize">{rec.action} {rec.asset}</span>
+              <span className="font-semibold capitalize">
+                {rec.action} {rec.asset}
+              </span>
             </div>
             <p className="text-gray-600 text-sm mb-2">{rec.reason}</p>
             <div className="flex justify-between text-sm text-gray-500">

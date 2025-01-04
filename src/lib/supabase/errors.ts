@@ -2,13 +2,19 @@ export class SupabaseError extends Error {
   constructor(
     message: string,
     public code?: string,
-    public status?: number
+    public status?: number,
   ) {
     super(message);
-    this.name = 'SupabaseError';
+    this.name = "SupabaseError";
   }
+}
 
-  static fromSupabaseError(error: { code?: string; message?: string; status?: number }): AuthError {
+class AuthError extends Error {
+  static fromSupabaseError(error: {
+    code?: string;
+    message?: string;
+    status?: number;
+  }): AuthError {
     // ...
   }
 

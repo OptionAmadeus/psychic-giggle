@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useEffect, useRef, useCallback } from "react";
 
 interface AutoRefreshConfig {
   onRefresh: () => Promise<void>;
@@ -6,16 +6,20 @@ interface AutoRefreshConfig {
   enabled?: boolean;
 }
 
-export function useAutoRefresh({ onRefresh, interval, enabled = true }: AutoRefreshConfig) {
+export function useAutoRefresh({
+  onRefresh,
+  interval,
+  enabled = true,
+}: AutoRefreshConfig) {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const refresh = useCallback(async () => {
     if (!enabled) return;
-    
+
     try {
       await onRefresh();
     } catch (error) {
-      console.error('Error during refresh:', error);
+      console.error("Error during refresh:", error);
     }
   }, [enabled, onRefresh]);
 

@@ -6,6 +6,6 @@ export interface BlogPost {
   date: string;
   author: string;
   imageUrl: string;
-  category: 'AI' | 'Crypto' | 'Investing';
+  category: "AI" | "Crypto" | "Investing";
   readTime: number;
 }

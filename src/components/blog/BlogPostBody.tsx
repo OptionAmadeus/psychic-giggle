@@ -1,6 +1,6 @@
-import React from 'react';
-import type { BlogPost } from '@/types/blog';
-import { getPostContent } from '@/utils/blog';
+import React from "react";
+import type { BlogPost } from "@/types/blog";
+import { getPostContent } from "@/utils/blog";
 
 interface BlogPostBodyProps {
   post: BlogPost;

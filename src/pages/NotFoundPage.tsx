@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Brain, Home } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Brain, Home } from "lucide-react";
 
 export function NotFoundPage() {
   return (
@@ -14,7 +14,8 @@ export function NotFoundPage() {
           Oops! My AI circuits can&apos;t find that page
         </h2>
         <p className="text-xl text-gray-600 mb-8">
-          Even with all my artificial intelligence, I couldn&apos;t locate what you&apos;re looking for.
+          Even with all my artificial intelligence, I couldn&apos;t locate what
+          you&apos;re looking for.
         </p>
         <Link
           to="/"

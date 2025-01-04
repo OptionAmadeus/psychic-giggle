@@ -1,5 +1,5 @@
-import { TrendingUp, TrendingDown } from 'lucide-react';
-import { usePortfolioStore } from '../stores/portfolio';
+import { TrendingUp, TrendingDown } from "lucide-react";
+import { usePortfolioStore } from "../stores/portfolio";
 
 export function AssetList() {
   const { assets } = usePortfolioStore();
@@ -10,8 +10,11 @@ export function AssetList() {
     <div className="bg-white rounded-lg shadow-lg p-6">
       <h2 className="text-xl font-semibold mb-4">Assets</h2>
       <div className="space-y-4">
-        {assets.map(asset => (
-          <div key={asset.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+        {assets.map((asset) => (
+          <div
+            key={asset.id}
+            className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
+          >
             <div>
               <p className="font-semibold">{asset.name}</p>
               <p className="text-sm text-gray-500">{asset.symbol}</p>
@@ -24,7 +27,11 @@ export function AssetList() {
                 ) : (
                   <TrendingDown className="w-4 h-4 text-red-500" />
                 )}
-                <span className={asset.change24h >= 0 ? 'text-green-500' : 'text-red-500'}>
+                <span
+                  className={
+                    asset.change24h >= 0 ? "text-green-500" : "text-red-500"
+                  }
+                >
                   {asset.change24h.toFixed(2)}%
                 </span>
               </div>

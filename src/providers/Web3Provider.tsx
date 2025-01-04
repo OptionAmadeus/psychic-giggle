@@ -1,6 +1,6 @@
-import React from 'react';
-import { Web3OnboardProvider } from '@web3-onboard/react';
-import { initOnboard } from '../lib/wallet/onboard';
+import React from "react";
+import { Web3OnboardProvider } from "@web3-onboard/react";
+import { initOnboard } from "../lib/wallet/onboard";
 
 const web3Onboard = initOnboard;
 

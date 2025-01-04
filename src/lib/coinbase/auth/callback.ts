@@ -1,9 +1,12 @@
-import { CoinbaseOAuthError } from './errors';
-import { OAuthStorage } from './storage';
-import { validateCallbackParams } from './validation';
-import { exchangeToken } from './token';
+import { CoinbaseOAuthError } from "./errors";
+import { OAuthStorage } from "./storage";
+import { validateCallbackParams } from "./validation";
+import { exchangeToken } from "./token";
 
-export async function handleOAuthCallback(code: string | null, state: string | null): Promise<boolean> {
+export async function handleOAuthCallback(
+  code: string | null,
+  state: string | null,
+): Promise<boolean> {
   try {
     validateCallbackParams(code, state);
 
@@ -16,9 +19,10 @@ export async function handleOAuthCallback(code: string | null, state: string | n
     OAuthStorage.setTokens(tokens.access_token, tokens.refresh_token);
     return true;
   } catch (error) {
-    console.error('OAuth callback failed:', error);
-    throw error instanceof CoinbaseOAuthError ? error : 
-      CoinbaseOAuthError.tokenExchangeFailed();
+    console.error("OAuth callback failed:", error);
+    throw error instanceof CoinbaseOAuthError
+      ? error
+      : CoinbaseOAuthError.tokenExchangeFailed();
   } finally {
     OAuthStorage.clearCodeVerifier();
   }

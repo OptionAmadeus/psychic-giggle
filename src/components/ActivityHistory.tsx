@@ -1,6 +1,6 @@
-import { ArrowUpRight, ArrowDownRight, RefreshCw } from 'lucide-react';
-import { usePortfolioStore } from '../stores/portfolio';
-import type { Transaction } from '../types/portfolio';
+import { ArrowUpRight, ArrowDownRight, RefreshCw } from "lucide-react";
+import { usePortfolioStore } from "../stores/portfolio";
+import type { Transaction } from "../types/portfolio";
 
 export function ActivityHistory() {
   const { transactions } = usePortfolioStore();
@@ -12,11 +12,14 @@ export function ActivityHistory() {
       <h2 className="text-xl font-semibold mb-4">Activity History</h2>
       <div className="space-y-4">
         {transactions.map((tx: Transaction) => (
-          <div key={tx.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
+          <div
+            key={tx.id}
+            className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
+          >
             <div className="flex items-center gap-3">
-              {tx.type === 'buy' ? (
+              {tx.type === "buy" ? (
                 <ArrowDownRight className="w-5 h-5 text-green-500" />
-              ) : tx.type === 'sell' ? (
+              ) : tx.type === "sell" ? (
                 <ArrowUpRight className="w-5 h-5 text-red-500" />
               ) : (
                 <RefreshCw className="w-5 h-5 text-blue-500" />
@@ -31,7 +34,9 @@ export function ActivityHistory() {
               </div>
             </div>
             <div className="text-right">
-              <p className="font-medium">${(tx.amount * tx.price).toLocaleString()}</p>
+              <p className="font-medium">
+                ${(tx.amount * tx.price).toLocaleString()}
+              </p>
               <p className="text-sm text-gray-500">
                 @ ${tx.price.toLocaleString()}
               </p>

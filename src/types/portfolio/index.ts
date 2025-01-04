@@ -12,16 +12,16 @@ export interface Asset {
 
 export interface Transaction {
   id: string;
-  type: 'buy' | 'sell' | 'transfer';
+  type: "buy" | "sell" | "transfer";
   asset: string;
   amount: number;
   price: number;
   timestamp: Date;
-  status: 'completed' | 'pending' | 'failed';
+  status: "completed" | "pending" | "failed";
 }
 
 export interface TradeRecommendation {
-  action: 'buy' | 'sell' | 'hold';
+  action: "buy" | "sell" | "hold";
   asset: string;
   amount: number;
   reason: string;
@@ -43,4 +43,4 @@ export interface PerformanceMetric {
   totalReturn: number;
 }
 
-export * from './state';
+export * from "./state";

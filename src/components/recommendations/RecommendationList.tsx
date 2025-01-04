@@ -1,12 +1,14 @@
-import type { TradeRecommendation } from '@/types/portfolio';
-import { EmptyState } from '../ui/EmptyState';
-import { RecommendationCard } from './RecommendationCard';
+import type { TradeRecommendation } from "@/types/portfolio";
+import { EmptyState } from "../ui/EmptyState";
+import { RecommendationCard } from "./RecommendationCard";
 
 interface RecommendationListProps {
   recommendations: TradeRecommendation[];
 }
 
-export function RecommendationList({ recommendations }: RecommendationListProps) {
+export function RecommendationList({
+  recommendations,
+}: RecommendationListProps) {
   if (recommendations.length === 0) {
     return <EmptyState message="No recommendations available" />;
   }

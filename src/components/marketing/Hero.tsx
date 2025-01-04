@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import { Logo } from '../ui/Logo';
+import React from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+import { Logo } from "../ui/Logo";
 
 export function Hero() {
   return (
@@ -34,10 +34,14 @@ export function Hero() {
             <div className="sm:text-center lg:text-left">
               <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
                 <span className="block">Empower your investments</span>
-                <span className="block text-blue-600">with artificial intelligence</span>
+                <span className="block text-blue-600">
+                  with artificial intelligence
+                </span>
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
-                Transform your portfolio management with AI-driven insights. Get personalized recommendations, real-time analytics, and comprehensive performance tracking all in one place.
+                Transform your portfolio management with AI-driven insights. Get
+                personalized recommendations, real-time analytics, and
+                comprehensive performance tracking all in one place.
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">

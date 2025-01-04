@@ -1,6 +1,6 @@
-import { TrendingUp, TrendingDown } from 'lucide-react';
-import { usePortfolioStore } from '@/stores/portfolio';
-import { formatCurrency, formatPercentage } from '@/utils/formatters';
+import { TrendingUp, TrendingDown } from "lucide-react";
+import { usePortfolioStore } from "@/stores/portfolio";
+import { formatCurrency, formatPercentage } from "@/utils/formatters";
 
 export function PositionsTable() {
   const { assets } = usePortfolioStore();
@@ -14,19 +14,51 @@ export function PositionsTable() {
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-gray-50">
                 <tr>
-                  <th scope="col" className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">Asset</th>
-                  <th scope="col" className="hidden sm:table-cell px-3 py-3.5 text-right text-sm font-semibold text-gray-900">Balance</th>
-                  <th scope="col" className="hidden md:table-cell px-3 py-3.5 text-right text-sm font-semibold text-gray-900">Price</th>
-                  <th scope="col" className="px-3 py-3.5 text-right text-sm font-semibold text-gray-900">Value</th>
-                  <th scope="col" className="hidden sm:table-cell px-3 py-3.5 text-right text-sm font-semibold text-gray-900">24h</th>
-                  <th scope="col" className="px-3 py-3.5 text-right text-sm font-semibold text-gray-900">P/L</th>
+                  <th
+                    scope="col"
+                    className="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6"
+                  >
+                    Asset
+                  </th>
+                  <th
+                    scope="col"
+                    className="hidden sm:table-cell px-3 py-3.5 text-right text-sm font-semibold text-gray-900"
+                  >
+                    Balance
+                  </th>
+                  <th
+                    scope="col"
+                    className="hidden md:table-cell px-3 py-3.5 text-right text-sm font-semibold text-gray-900"
+                  >
+                    Price
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-3 py-3.5 text-right text-sm font-semibold text-gray-900"
+                  >
+                    Value
+                  </th>
+                  <th
+                    scope="col"
+                    className="hidden sm:table-cell px-3 py-3.5 text-right text-sm font-semibold text-gray-900"
+                  >
+                    24h
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-3 py-3.5 text-right text-sm font-semibold text-gray-900"
+                  >
+                    P/L
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
-                {assets.map(asset => (
+                {assets.map((asset) => (
                   <tr key={asset.id} className="hover:bg-gray-50">
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
-                      <div className="font-medium text-gray-900">{asset.name}</div>
+                      <div className="font-medium text-gray-900">
+                        {asset.name}
+                      </div>
                       <div className="text-gray-500">{asset.symbol}</div>
                     </td>
                     <td className="hidden sm:table-cell whitespace-nowrap px-3 py-4 text-right text-sm text-gray-500">
@@ -45,13 +77,25 @@ export function PositionsTable() {
                         ) : (
                           <TrendingDown className="w-4 h-4 text-red-500" />
                         )}
-                        <span className={asset.change24h >= 0 ? 'text-green-500' : 'text-red-500'}>
+                        <span
+                          className={
+                            asset.change24h >= 0
+                              ? "text-green-500"
+                              : "text-red-500"
+                          }
+                        >
                           {formatPercentage(asset.change24h)}
                         </span>
                       </div>
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-right text-sm">
-                      <span className={(asset.profitLoss || 0) >= 0 ? 'text-green-500' : 'text-red-500'}>
+                      <span
+                        className={
+                          (asset.profitLoss || 0) >= 0
+                            ? "text-green-500"
+                            : "text-red-500"
+                        }
+                      >
                         {formatCurrency(asset.profitLoss || 0)}
                       </span>
                     </td>

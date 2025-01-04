@@ -1,7 +1,7 @@
-import React from 'react';
-import { TrendingUp, TrendingDown } from 'lucide-react';
-import type { Asset } from '@/types/portfolio';
-import { formatCurrency, formatPercentage } from '@/utils/formatters';
+import React from "react";
+import { TrendingUp, TrendingDown } from "lucide-react";
+import type { Asset } from "@/types/portfolio";
+import { formatCurrency, formatPercentage } from "@/utils/formatters";
 
 interface AssetCardProps {
   asset: Asset;
@@ -24,7 +24,7 @@ export function AssetCard({ asset }: AssetCardProps) {
           ) : (
             <TrendingDown className="w-4 h-4 text-red-500" />
           )}
-          <span className={isPositive ? 'text-green-500' : 'text-red-500'}>
+          <span className={isPositive ? "text-green-500" : "text-red-500"}>
             {formatPercentage(asset.change24h)}
           </span>
         </div>

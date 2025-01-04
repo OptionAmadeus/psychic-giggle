@@ -1,5 +1,5 @@
 // Centralize icon imports to reduce bundle size
-import { 
+import {
   Brain,
   BookOpen,
   Calendar,
@@ -9,8 +9,8 @@ import {
   Send,
   TrendingUp,
   TrendingDown,
-  ArrowRight
-} from 'lucide-react';
+  ArrowRight,
+} from "lucide-react";
 
 // Export commonly used icons
 export const Icons = {
@@ -23,5 +23,5 @@ export const Icons = {
   Send,
   TrendingUp,
   TrendingDown,
-  ArrowRight
+  ArrowRight,
 };

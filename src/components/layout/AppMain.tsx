@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import { PortfolioOverview } from '../portfolio/PortfolioOverview';
-import { usePortfolioStore } from '../../stores/portfolio';
-import { LoadingSpinner } from '../ui/LoadingSpinner';
-import { ErrorMessage } from '../ui/ErrorMessage';
+import React, { useEffect } from "react";
+import { PortfolioOverview } from "../portfolio/PortfolioOverview";
+import { usePortfolioStore } from "../../stores/portfolio";
+import { LoadingSpinner } from "../ui/LoadingSpinner";
+import { ErrorMessage } from "../ui/ErrorMessage";
 
 export function AppMain() {
   const { isLoading, error, refreshPortfolio } = usePortfolioStore();

@@ -5,8 +5,8 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  ResponsiveContainer
-} from 'recharts';
+  ResponsiveContainer,
+} from "recharts";
 
 interface DataPoint {
   timestamp: number;
@@ -24,12 +24,15 @@ export function LineChart({
   data,
   height = 400,
   valueFormatter = (value) => `$${value.toLocaleString()}`,
-  dateFormatter = (timestamp) => new Date(timestamp).toLocaleDateString()
+  dateFormatter = (timestamp) => new Date(timestamp).toLocaleDateString(),
 }: LineChartProps) {
   return (
-    <div style={{ width: '100%', height }}>
+    <div style={{ width: "100%", height }}>
       <ResponsiveContainer>
-        <RechartsLineChart data={data} margin={{ top: 10, right: 10, left: 10, bottom: 10 }}>
+        <RechartsLineChart
+          data={data}
+          margin={{ top: 10, right: 10, left: 10, bottom: 10 }}
+        >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
             dataKey="timestamp"
@@ -42,7 +45,7 @@ export function LineChart({
             width={80}
           />
           <Tooltip
-            formatter={(value: number) => [valueFormatter(value), 'Value']}
+            formatter={(value: number) => [valueFormatter(value), "Value"]}
             labelFormatter={(timestamp: number) => dateFormatter(timestamp)}
           />
           <Line

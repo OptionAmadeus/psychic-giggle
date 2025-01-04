@@ -1,7 +1,12 @@
-import { create } from 'zustand';
-import type { Asset, PortfolioStats, TradeRecommendation, Transaction } from '../types/portfolio';
-import { fetchPortfolioData, fetchRecommendations } from '../services/api';
-import { calculatePortfolioStats } from '../utils/portfolio';
+import { create } from "zustand";
+import type {
+  Asset,
+  PortfolioStats,
+  TradeRecommendation,
+  Transaction,
+} from "../types/portfolio";
+import { fetchPortfolioData, fetchRecommendations } from "../services/api";
+import { calculatePortfolioStats } from "../utils/portfolio";
 
 interface PortfolioState {
   assets: Asset[];
@@ -10,7 +15,7 @@ interface PortfolioState {
   recommendations: TradeRecommendation[];
   isLoading: boolean;
   error: string | null;
-  
+
   refreshPortfolio: () => Promise<void>;
   getRecommendations: () => Promise<void>;
 }
@@ -23,7 +28,7 @@ export const usePortfolioStore = create<PortfolioState>((set) => ({
     totalChange24h: 0,
     totalProfitLoss: 0,
     totalROI: 0,
-    lastUpdated: new Date()
+    lastUpdated: new Date(),
   },
   recommendations: [],
   isLoading: false,
@@ -33,10 +38,10 @@ export const usePortfolioStore = create<PortfolioState>((set) => ({
     try {
       set({ isLoading: true, error: null });
       const data = await fetchPortfolioData();
-      set({ 
+      set({
         assets: data.assets,
         transactions: data.transactions,
-        stats: calculatePortfolioStats(data.assets)
+        stats: calculatePortfolioStats(data.assets),
       });
     } catch (error) {
       set({ error: (error as Error).message });
@@ -55,5 +60,5 @@ export const usePortfolioStore = create<PortfolioState>((set) => ({
     } finally {
       set({ isLoading: false });
     }
-  }
+  },
 }));

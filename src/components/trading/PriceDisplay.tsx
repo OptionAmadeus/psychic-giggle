@@ -1,13 +1,16 @@
-import { TrendingUp, TrendingDown } from 'lucide-react';
-import { useCoinbasePrices } from '@/hooks/useCoinbasePrices';
-import { formatCurrency } from '@/utils/formatters';
+import { TrendingUp, TrendingDown } from "lucide-react";
+import { useCoinbasePrices } from "@/hooks/useCoinbasePrices";
+import { formatCurrency } from "@/utils/formatters";
 
 interface PriceDisplayProps {
   productId: string;
   showChange?: boolean;
 }
 
-export function PriceDisplay({ productId, showChange = true }: PriceDisplayProps) {
+export function PriceDisplay({
+  productId,
+  showChange = true,
+}: PriceDisplayProps) {
   const { prices, lastUpdate } = useCoinbasePrices([productId]);
   const price = prices[productId];
 

@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Calendar, Clock, ArrowLeft } from 'lucide-react';
-import { formatDate } from '@/utils/formatters/date';
-import type { BlogPost } from '@/types/blog';
-import { BlogPostBody } from './BlogPostBody';
-import { RelatedPosts } from './RelatedPosts';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Calendar, Clock, ArrowLeft } from "lucide-react";
+import { formatDate } from "@/utils/formatters/date";
+import type { BlogPost } from "@/types/blog";
+import { BlogPostBody } from "./BlogPostBody";
+import { RelatedPosts } from "./RelatedPosts";
 
 interface BlogPostContentProps {
   post: BlogPost;
@@ -13,14 +13,14 @@ interface BlogPostContentProps {
 export function BlogPostContent({ post }: BlogPostContentProps) {
   return (
     <article className="bg-white rounded-lg shadow-lg overflow-hidden">
-      <img 
-        src={post.imageUrl} 
+      <img
+        src={post.imageUrl}
         alt={post.title}
         className="w-full h-96 object-cover"
       />
-      
+
       <div className="p-8">
-        <Link 
+        <Link
           to="/blog"
           className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-6"
         >
@@ -34,9 +34,7 @@ export function BlogPostContent({ post }: BlogPostContentProps) {
           </span>
         </div>
 
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
-          {post.title}
-        </h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">{post.title}</h1>
 
         <div className="flex items-center gap-6 text-gray-500 mb-8">
           <div className="flex items-center gap-2">

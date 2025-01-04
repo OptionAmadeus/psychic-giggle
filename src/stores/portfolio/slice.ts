@@ -1,4 +1,4 @@
-import type { PortfolioState } from './types';
+import type { PortfolioState } from "./types";
 
 export const initialState: PortfolioState = {
   assets: [],
@@ -10,10 +10,10 @@ export const initialState: PortfolioState = {
     totalChange24h: 0,
     totalProfitLoss: 0,
     totalROI: 0,
-    lastUpdated: new Date()
+    lastUpdated: new Date(),
   },
   isConnected: false,
   walletAddress: null,
   isLoading: false,
-  error: null
+  error: null,
 };

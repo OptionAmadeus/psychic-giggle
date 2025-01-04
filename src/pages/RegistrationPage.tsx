@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { RegistrationForm } from '../components/auth/RegistrationForm';
-import { Logo } from '../components/ui/Logo';
+import React from "react";
+import { Link } from "react-router-dom";
+import { RegistrationForm } from "../components/auth/RegistrationForm";
+import { Logo } from "../components/ui/Logo";
 
 export function RegistrationPage() {
   return (
@@ -14,8 +14,11 @@ export function RegistrationPage() {
           Create your account
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Already have an account?{' '}
-          <Link to="/login" className="font-medium text-blue-600 hover:text-blue-500">
+          Already have an account?{" "}
+          <Link
+            to="/login"
+            className="font-medium text-blue-600 hover:text-blue-500"
+          >
             Log in
           </Link>
         </p>

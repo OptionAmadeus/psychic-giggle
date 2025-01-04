@@ -1,11 +1,11 @@
-import { supabase } from '../client.mjs';
+import { supabase } from "../client.mjs";
 
 export async function checkSupabaseHealth() {
   try {
     // Basic connection test
     const { error: connError } = await supabase
-      .from('waitlist')
-      .select('count')
+      .from("waitlist")
+      .select("count")
       .limit(0);
 
     if (connError) {
@@ -19,16 +19,16 @@ export async function checkSupabaseHealth() {
     }
 
     return {
-      status: 'healthy',
+      status: "healthy",
       timestamp: new Date().toISOString(),
-      message: 'All services operational'
+      message: "All services operational",
     };
   } catch (error) {
     return {
-      status: 'unhealthy',
+      status: "unhealthy",
       timestamp: new Date().toISOString(),
-      error: error instanceof Error ? error.message : 'Unknown error',
-      message: 'Service experiencing issues'
+      error: error instanceof Error ? error.message : "Unknown error",
+      message: "Service experiencing issues",
     };
   }
 }

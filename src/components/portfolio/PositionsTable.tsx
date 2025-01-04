@@ -1,9 +1,9 @@
-import { TrendingUp, TrendingDown } from 'lucide-react';
-import { usePortfolioStore } from '@/stores/portfolio';
-import { formatCurrency, formatPercentage } from '@/utils/formatters';
-import { TableHeader } from './table/TableHeader';
-import { TableCell } from './table/TableCell';
-import { EmptyState } from '../ui/EmptyState';
+import { TrendingUp, TrendingDown } from "lucide-react";
+import { usePortfolioStore } from "@/stores/portfolio";
+import { formatCurrency, formatPercentage } from "@/utils/formatters";
+import { TableHeader } from "./table/TableHeader";
+import { TableCell } from "./table/TableCell";
+import { EmptyState } from "../ui/EmptyState";
 
 export function PositionsTable() {
   const { assets } = usePortfolioStore();
@@ -30,10 +30,12 @@ export function PositionsTable() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200 bg-white">
-                {assets.map(asset => (
+                {assets.map((asset) => (
                   <tr key={asset.id} className="hover:bg-gray-50">
                     <TableCell>
-                      <div className="font-medium text-gray-900">{asset.name}</div>
+                      <div className="font-medium text-gray-900">
+                        {asset.name}
+                      </div>
                       <div className="text-gray-500">{asset.symbol}</div>
                     </TableCell>
                     <TableCell align="right">
@@ -52,13 +54,25 @@ export function PositionsTable() {
                         ) : (
                           <TrendingDown className="w-4 h-4 text-red-500" />
                         )}
-                        <span className={asset.change24h >= 0 ? 'text-green-500' : 'text-red-500'}>
+                        <span
+                          className={
+                            asset.change24h >= 0
+                              ? "text-green-500"
+                              : "text-red-500"
+                          }
+                        >
                           {formatPercentage(asset.change24h)}
                         </span>
                       </div>
                     </TableCell>
                     <TableCell align="right">
-                      <span className={(asset.profitLoss || 0) >= 0 ? 'text-green-500' : 'text-red-500'}>
+                      <span
+                        className={
+                          (asset.profitLoss || 0) >= 0
+                            ? "text-green-500"
+                            : "text-red-500"
+                        }
+                      >
                         {formatCurrency(asset.profitLoss || 0)}
                       </span>
                     </TableCell>

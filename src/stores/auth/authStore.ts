@@ -1,6 +1,6 @@
-import { create } from 'zustand';
-import { authClient } from '@/lib/supabase/auth/client';
-import type { User } from '@/types/auth';
+import { create } from "zustand";
+import { authClient } from "@/lib/supabase/auth/client";
+import type { User } from "@/types/auth";
 
 interface AuthState {
   user: User | null;
@@ -22,27 +22,27 @@ export const useAuthStore = create<AuthState>((set) => ({
     set({ isLoading: true, error: null });
     try {
       const { data } = await authClient.signIn(credentials);
-      
-      set({ 
+
+      set({
         user: {
           id: data.user.id,
           email: data.user.email!,
-          name: data.user.user_metadata.name || 'User'
+          name: data.user.user_metadata.name || "User",
         },
         isAuthenticated: true,
         isLoading: false,
-        error: null
+        error: null,
       });
       return true;
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Login failed';
-      console.error('Login error:', error);
-      
+      const message = error instanceof Error ? error.message : "Login failed";
+      console.error("Login error:", error);
+
       set({
         user: null,
         isAuthenticated: false,
         isLoading: false,
-        error: message
+        error: message,
       });
       return false;
     }
@@ -51,16 +51,16 @@ export const useAuthStore = create<AuthState>((set) => ({
   logout: async () => {
     try {
       await authClient.signOut();
-      set({ 
-        user: null, 
+      set({
+        user: null,
         isAuthenticated: false,
-        error: null 
+        error: null,
       });
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Logout failed';
+      const message = error instanceof Error ? error.message : "Logout failed";
       set({ error: message });
     }
   },
 
-  clearError: () => set({ error: null })
+  clearError: () => set({ error: null }),
 }));

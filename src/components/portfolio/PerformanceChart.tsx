@@ -1,7 +1,7 @@
-import { LineChart } from '../charts/LineChart';
-import { usePortfolioStore } from '@/stores/portfolio';
-import { formatCurrency } from '@/utils/formatters';
-import { EmptyState } from '../ui/EmptyState';
+import { LineChart } from "../charts/LineChart";
+import { usePortfolioStore } from "@/stores/portfolio";
+import { formatCurrency } from "@/utils/formatters";
+import { EmptyState } from "../ui/EmptyState";
 
 export function PerformanceChart() {
   const { performanceHistory, stats } = usePortfolioStore();
@@ -10,9 +10,9 @@ export function PerformanceChart() {
     return <EmptyState message="No performance data available" />;
   }
 
-  const chartData = performanceHistory.map(point => ({
+  const chartData = performanceHistory.map((point) => ({
     timestamp: point.timestamp,
-    value: point.totalValue
+    value: point.totalValue,
   }));
 
   return (
@@ -22,7 +22,9 @@ export function PerformanceChart() {
         <LineChart
           data={chartData}
           valueFormatter={formatCurrency}
-          dateFormatter={(timestamp) => new Date(timestamp).toLocaleDateString()}
+          dateFormatter={(timestamp) =>
+            new Date(timestamp).toLocaleDateString()
+          }
         />
       </div>
       <div className="mt-4 text-sm text-gray-500 text-right">

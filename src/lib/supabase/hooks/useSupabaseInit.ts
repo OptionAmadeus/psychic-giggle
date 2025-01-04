@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { getSupabase } from '../client';
+import { useState, useEffect } from "react";
+import { getSupabase } from "../client";
 
 export function useSupabaseInit() {
   const [isInitialized, setIsInitialized] = useState(false);
@@ -11,7 +11,11 @@ export function useSupabaseInit() {
         await getSupabase();
         setIsInitialized(true);
       } catch (err) {
-        setError(err instanceof Error ? err : new Error('Failed to initialize Supabase'));
+        setError(
+          err instanceof Error
+            ? err
+            : new Error("Failed to initialize Supabase"),
+        );
       }
     }
 

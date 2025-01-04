@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { LogOut } from 'lucide-react';
-import { useAuthStore } from '@/stores/auth';
-import { Logo } from '../ui/Logo';
+import React from "react";
+import { Link } from "react-router-dom";
+import { LogOut } from "lucide-react";
+import { useAuthStore } from "@/stores/auth";
+import { Logo } from "../ui/Logo";
 
 export function DashboardHeader() {
   const { logout } = useAuthStore();
@@ -14,7 +14,7 @@ export function DashboardHeader() {
           <Link to="/dashboard">
             <Logo size="sm" />
           </Link>
-          
+
           <button
             onClick={logout}
             className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-colors"

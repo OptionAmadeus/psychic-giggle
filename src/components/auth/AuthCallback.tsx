@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useAuthStore } from '@/stores/auth';
-import { LoadingSpinner } from '@/components/ui/LoadingSpinner';
-import { ErrorMessage } from '@/components/ui/ErrorMessage';
+import { useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { useAuthStore } from "@/stores/auth";
+import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
+import { ErrorMessage } from "@/components/ui/ErrorMessage";
 
 export function AuthCallback() {
   const navigate = useNavigate();
@@ -12,20 +12,20 @@ export function AuthCallback() {
   useEffect(() => {
     async function processCallback() {
       try {
-        const code = searchParams.get('code');
+        const code = searchParams.get("code");
         if (!code) {
-          throw new Error('No authorization code provided');
+          throw new Error("No authorization code provided");
         }
 
         const success = await handleOAuthCallback(code);
         if (success) {
-          navigate('/dashboard', { replace: true });
+          navigate("/dashboard", { replace: true });
         } else {
-          throw new Error('Authentication failed');
+          throw new Error("Authentication failed");
         }
       } catch (err) {
-        console.error('OAuth callback failed:', err);
-        setTimeout(() => navigate('/login', { replace: true }), 3000);
+        console.error("OAuth callback failed:", err);
+        setTimeout(() => navigate("/login", { replace: true }), 3000);
       }
     }
 

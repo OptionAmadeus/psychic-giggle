@@ -1,5 +1,5 @@
-import type { AIResult, AIError } from '@/types/ai';
-import { ErrorMessage } from '../ui/ErrorMessage';
+import type { AIResult, AIError } from "@/types/ai";
+import { ErrorMessage } from "../ui/ErrorMessage";
 
 interface AIResultsProps {
   results: AIResult[];
@@ -21,10 +21,11 @@ export function AIResults({ results, error }: AIResultsProps) {
               {new Date(result.timestamp).toLocaleTimeString()}
             </span>
           </div>
-          {result.type === 'sentiment' ? (
+          {result.type === "sentiment" ? (
             <div className="flex items-center gap-2">
               <span className="font-semibold">
-                {result.result.label} ({(result.result as SentimentResult).score * 100}%)
+                {result.result.label} (
+                {(result.result as SentimentResult).score * 100}%)
               </span>
             </div>
           ) : (
