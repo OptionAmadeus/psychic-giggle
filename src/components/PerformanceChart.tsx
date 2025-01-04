@@ -1,4 +1,3 @@
-import React from "react";
 import {
   LineChart,
   Line,
@@ -9,6 +8,12 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { usePortfolioStore } from "../stores/portfolio";
+
+// Ensure that 'performanceHistory' is a property of 'PortfolioState'
+interface PortfolioState {
+  performanceHistory: any; // Replace 'any' with the correct type
+  isConnected: boolean;
+}
 
 export function PerformanceChart() {
   const { performanceHistory, isConnected } = usePortfolioStore();

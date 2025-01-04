@@ -1,4 +1,3 @@
-import React from "react";
 import { Brain, LineChart, Shield, History, Zap, Users } from "lucide-react";
 
 const features = [

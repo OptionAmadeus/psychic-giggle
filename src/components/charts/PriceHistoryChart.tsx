@@ -1,4 +1,3 @@
-import React from "react";
 import { LineChart } from "@/components/charts/LineChart";
 import { usePriceHistory } from "@/hooks/usePriceHistory";
 import { LoadingSpinner } from "@/components/ui/LoadingSpinner";

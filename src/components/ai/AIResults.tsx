@@ -1,4 +1,9 @@
-import type { AIResult, AIError } from "@/types/ai";
+import type {
+  AIResult,
+  AIError,
+  SentimentResult,
+  GenerationResult,
+} from "@/types/ai";
 import { ErrorMessage } from "../ui/ErrorMessage";
 
 interface AIResultsProps {

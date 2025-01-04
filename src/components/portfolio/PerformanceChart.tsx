@@ -3,6 +3,17 @@ import { usePortfolioStore } from "@/stores/portfolio";
 import { formatCurrency } from "@/utils/formatters";
 import { EmptyState } from "../ui/EmptyState";
 
+// Ensure that 'performanceHistory' is a property of 'PortfolioState'
+interface PortfolioState {
+  performanceHistory: any; // Replace 'any' with the correct type
+  isConnected: boolean;
+}
+
+// Ensure that 'point' has a type
+const handlePoint = (point: any) => {
+  // Implementation
+};
+
 export function PerformanceChart() {
   const { performanceHistory, stats } = usePortfolioStore();
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Wallet } from "lucide-react";
 import { initializeOAuthFlow } from "@/lib/coinbase/auth";
 import { LoadingSpinner } from "./ui/LoadingSpinner";

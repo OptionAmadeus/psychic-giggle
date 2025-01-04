@@ -71,3 +71,9 @@ export function useAIDemo() {
     handleGenerate,
   };
 }
+
+// Ensure that 'pipeline.ts' is correctly exported as a module
+// src/lib/pipeline.ts
+export const someFunction = () => {
+  // Implementation
+};

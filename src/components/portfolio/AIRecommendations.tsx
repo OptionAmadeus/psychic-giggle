@@ -1,4 +1,3 @@
-import React from "react";
 import { Brain, RefreshCw } from "lucide-react";
 import { usePortfolioStore } from "../../stores/portfolio";
 

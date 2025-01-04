@@ -1,4 +1,3 @@
-import React from "react";
 import { Calendar, Clock } from "lucide-react";
 import { formatDate } from "@/utils/formatters/date";
 import type { BlogPost as BlogPostType } from "@/types/blog";

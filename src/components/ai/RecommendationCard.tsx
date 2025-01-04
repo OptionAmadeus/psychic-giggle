@@ -1,4 +1,3 @@
-import React from "react";
 import { Brain } from "lucide-react";
 import type { TradeRecommendation } from "@/types/portfolio";
 import { formatPercentage } from "@/utils/formatters";

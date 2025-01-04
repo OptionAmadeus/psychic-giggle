@@ -1,4 +1,3 @@
-import React from "react";
 import { AIInput } from "./AIInput";
 import { AIResults } from "./AIResults";
 import { useAIDemo } from "./hooks/useAIDemo";

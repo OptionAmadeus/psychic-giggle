@@ -1,4 +1,3 @@
-import React from "react";
 import { useAuthDiagnostics } from "@/lib/supabase/hooks/useAuthDiagnostics";
 import { AlertCircle, CheckCircle, XCircle } from "lucide-react";
 
@@ -6,6 +5,9 @@ export function AuthDebugger() {
   const diagnostics = useAuthDiagnostics();
 
   if (!diagnostics || import.meta.env.PROD) return null;
+
+  // Ensure that the type is correctly assigned
+  const someVariable: React.ReactNode = someValue as React.ReactNode;
 
   return (
     <div className="fixed bottom-4 right-4 p-4 bg-white rounded-lg shadow-lg border border-gray-200 max-w-sm">

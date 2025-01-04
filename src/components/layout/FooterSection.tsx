@@ -1,4 +1,3 @@
-import React from "react";
 import { FooterSectionProps } from "./types";
 
 export function FooterSection({ title, children }: FooterSectionProps) {

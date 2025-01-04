@@ -1,5 +1,3 @@
-import React from "react";
-
 const currentYear = new Date().getFullYear();
 
 export function AuthFooter() {

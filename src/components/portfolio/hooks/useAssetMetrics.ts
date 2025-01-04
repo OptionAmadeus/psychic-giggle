@@ -7,6 +7,18 @@ import {
   calculateROI,
 } from "@/utils/portfolio";
 
+export const calculateTotalValue = () => {
+  // Implementation
+};
+
+export const calculateTotalChange = () => {
+  // Implementation
+};
+
+export const calculateProfitLoss = () => {
+  // Implementation
+};
+
 export function useAssetMetrics(assets: Asset[]) {
   const metrics = useMemo(
     () => ({

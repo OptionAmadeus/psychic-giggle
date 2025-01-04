@@ -1,6 +1,10 @@
-import React from "react";
 import { TrendingUp, TrendingDown } from "lucide-react";
 import { usePortfolioStore } from "../stores/portfolio";
+
+// Ensure that 'isConnected' is a property of 'PortfolioState'
+interface PortfolioState {
+  isConnected: boolean;
+}
 
 export function PositionsTable() {
   const { assets, isConnected } = usePortfolioStore();

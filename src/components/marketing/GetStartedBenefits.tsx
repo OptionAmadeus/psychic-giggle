@@ -1,4 +1,3 @@
-import React from "react";
 import { CheckCircle2, Brain, LineChart, Clock } from "lucide-react";
 
 const benefits = [

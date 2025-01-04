@@ -1,4 +1,3 @@
-import React from "react";
 import { useAuthStore } from "../../stores/auth";
 import { Logo } from "../ui/Logo";
 

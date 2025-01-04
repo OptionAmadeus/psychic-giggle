@@ -1,4 +1,3 @@
-import React from "react";
 import { RecommendationCard } from "./RecommendationCard";
 import type { TradeRecommendation } from "@/types/portfolio";
 import { EmptyState } from "../ui/EmptyState";

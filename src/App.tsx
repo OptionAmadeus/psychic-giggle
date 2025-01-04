@@ -1,3 +1,4 @@
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./components/auth/AuthProvider";
 import { LandingPage } from "./pages/LandingPage";
@@ -12,8 +13,9 @@ import { BlogPostPage } from "./pages/BlogPostPage";
 import { AuthCallback } from "./pages/AuthCallback";
 import { ProtectedRoute } from "./components/auth/ProtectedRoute";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { ProtectedRouteProps } from "./types"; // Ensure this is correctly imported
 
-export default function App() {
+const App = () => {
   return (
     <AuthProvider>
       <Routes>
@@ -34,4 +36,6 @@ export default function App() {
       </Routes>
     </AuthProvider>
   );
-}
+};
+
+export default App;

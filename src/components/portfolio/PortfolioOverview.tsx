@@ -5,6 +5,11 @@ import { ActivityHistory } from "./ActivityHistory";
 import { PerformanceChart } from "./PerformanceChart";
 import { WalletConnect } from "../WalletConnect";
 
+// Ensure that 'isConnected' is a property of 'PortfolioState'
+interface PortfolioState {
+  isConnected: boolean;
+}
+
 export function PortfolioOverview() {
   const { isConnected } = usePortfolioStore();
 

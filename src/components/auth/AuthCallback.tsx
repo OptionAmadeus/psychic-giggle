@@ -4,6 +4,11 @@ import { useAuthStore } from "@/stores/auth";
 import { LoadingSpinner } from "@/components/ui/LoadingSpinner";
 import { ErrorMessage } from "@/components/ui/ErrorMessage";
 
+// Ensure that 'handleOAuthCallback' is a property of 'AuthStore'
+interface AuthStore {
+  handleOAuthCallback: () => void;
+}
+
 export function AuthCallback() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();

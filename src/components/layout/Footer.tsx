@@ -1,4 +1,3 @@
-import React from "react";
 import { Logo } from "../ui/Logo";
 import { FooterLink } from "./FooterLink";
 import { FooterSection } from "./FooterSection";

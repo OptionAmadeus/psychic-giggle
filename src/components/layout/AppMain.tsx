@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { PortfolioOverview } from "../portfolio/PortfolioOverview";
 import { usePortfolioStore } from "../../stores/portfolio";
 import { LoadingSpinner } from "../ui/LoadingSpinner";

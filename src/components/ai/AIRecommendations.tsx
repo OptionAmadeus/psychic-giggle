@@ -1,4 +1,3 @@
-import React from "react";
 import { RecommendationList } from "./RecommendationList";
 import { RefreshButton } from "./RefreshButton";
 import { usePortfolioStore } from "@/stores/portfolio";

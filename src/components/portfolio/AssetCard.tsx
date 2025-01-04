@@ -1,4 +1,3 @@
-import React from "react";
 import { TrendingUp, TrendingDown } from "lucide-react";
 import type { Asset } from "@/types/portfolio";
 import { formatCurrency, formatPercentage } from "@/utils/formatters";
