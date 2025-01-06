@@ -1,2 +1,7 @@
-// This file is intentionally empty as we're no longer using client-side AI processing
-// All AI functionality is handled by the backend
+export const classifyText = async (input: string) => {
+  // Implementation for classifyText
+};
+
+export const generateText = async (input: string) => {
+  // Implementation for generateText
+};
